@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "proeritia:infinite_star"
+    },
+    "C": {
+      "item": "proeritia:klein_star_claster"
+    },
+
+    "S": {
+      "item": "proeritia:gcs_shovel"
+    }
+  },
+  "pattern": [
+    "     IIII",
+    "    IIIII",
+    "    IIIII",
+    "    CIIII",
+    "    SCII ",
+    "   C     ",
+    "  C      ",
+    "CC       ",
+    "CC       "
+  ],
+  "result": {
+    "item": "proeritia:inf_shovel"
+  },
+  "show_notification": true,
+  "tier": 4
+}

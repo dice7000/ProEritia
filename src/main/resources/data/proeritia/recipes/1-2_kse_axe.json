@@ -1,0 +1,38 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:klein_binary_star_extend"
+    },
+    "R": {
+      "item": "projecte:red_matter"
+    },
+    "B": {
+      "item": "projecte:red_matter_block"
+    },
+    "D": {
+      "item": "projecte:dark_matter_block"
+    },
+
+    "A": {
+      "item": "projecte:rm_axe"
+    }
+  },
+  "pattern": [
+    "    KK   ",
+    "   KK  D ",
+    "  KKKBB  ",
+    "  KKBAB  ",
+    "  K BBKK ",
+    "   R  KK ",
+    "  R      ",
+    " R       ",
+    "B        "
+  ],
+  "result": {
+    "item": "proeritia:kse_axe"
+  },
+  "show_notification": true,
+  "tier": 4
+}

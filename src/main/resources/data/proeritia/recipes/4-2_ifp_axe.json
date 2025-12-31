@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "proeritia:infinite_star"
+    },
+    "C": {
+      "item": "proeritia:klein_star_claster"
+    },
+
+    "A": {
+      "item": "proeritia:gcs_axe"
+    }
+  },
+  "pattern": [
+    "   III   ",
+    "  III  C ",
+    " IIIICC  ",
+    " IIICAC  ",
+    " II CCIII",
+    " I C  III",
+    "  C   II ",
+    "CC       ",
+    "CC       "
+  ],
+  "result": {
+    "item": "proeritia:inf_axe"
+  },
+  "show_notification": true,
+  "tier": 4
+}

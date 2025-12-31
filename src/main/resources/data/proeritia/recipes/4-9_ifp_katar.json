@@ -1,0 +1,44 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "proeritia:infinite_star"
+    },
+    "C": {
+      "item": "proeritia:klein_star_claster"
+    },
+
+    "H": {
+      "item": "proeritia:inf_hoe"
+    },
+    "E": {
+      "item": "proeritia:inf_shears"
+    },
+    "A": {
+      "item": "proeritia:inf_axe"
+    },
+    "S": {
+      "item": "proeritia:inf_sword"
+    },
+    "K": {
+      "item": "proeritia:gcs_katar"
+    }
+  },
+  "pattern": [
+    "     II  ",
+    "    ISII ",
+    "   IEIAI ",
+    "  IIIHI  ",
+    " CIKIII  ",
+    "C CIII   ",
+    "CC CI    ",
+    " CC C    ",
+    "  CC     "
+  ],
+  "result": {
+    "item": "proeritia:inf_katar"
+  },
+  "show_notification": true,
+  "tier": 4
+}

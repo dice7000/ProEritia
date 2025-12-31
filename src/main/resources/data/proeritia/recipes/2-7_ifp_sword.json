@@ -1,0 +1,38 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:inf_binary_proest"
+    },
+    "R": {
+      "item": "proeritia:klein_binary_star_extend"
+    },
+    "B": {
+      "item": "avaritia:infinity_ingot"
+    },
+    "D": {
+      "item": "avaritia:infinity_catalyst"
+    },
+
+    "S": {
+      "item": "proeritia:kse_sword"
+    }
+  },
+  "pattern": [
+    "      RRR",
+    "     RKKR",
+    "    RKKKR",
+    "   RKKKR ",
+    "DDRKKKR  ",
+    " BBDKR   ",
+    " BSBR    ",
+    " RBBD    ",
+    "B   D    "
+  ],
+  "result": {
+    "item": "proeritia:ifp_sword"
+  },
+  "show_notification": true,
+  "tier": 4
+}

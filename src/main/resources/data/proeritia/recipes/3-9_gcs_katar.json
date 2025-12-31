@@ -1,0 +1,44 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:ultracompressed_inf_binary_proest"
+    },
+    "R": {
+      "item": "proeritia:gravitational_collapsed_star"
+    },
+    "D": {
+      "item": "proeritia:ultracompressed_klein_star_extend"
+    },
+
+    "H": {
+      "item": "proeritia:ifp_hoe"
+    },
+    "E": {
+      "item": "proeritia:ifp_shears"
+    },
+    "A": {
+      "item": "proeritia:ifp_axe"
+    },
+    "S": {
+      "item": "proeritia:ifp_sword"
+    }
+  },
+  "pattern": [
+    "      KK ",
+    "     KSK ",
+    "    KAK  ",
+    "   KEK   ",
+    "  KHKKK  ",
+    " KKKRRK  ",
+    "DDRRRK   ",
+    " DDRK    ",
+    "  DD     "
+  ],
+  "result": {
+    "item": "proeritia:gcs_katar"
+  },
+  "show_notification": true,
+  "tier": 4
+}

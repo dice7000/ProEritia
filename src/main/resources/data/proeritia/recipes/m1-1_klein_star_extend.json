@@ -1,0 +1,37 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "misc",
+  "key": {
+    "K": {
+      "item": "projecte:klein_star_omega"
+    },
+    "R": {
+      "item": "projecte:red_matter_block"
+    },
+    "C": {
+      "item": "projecte:condenser_mk2"
+    },
+    "L": {
+      "item": "projecte:collector_mk3"
+    },
+    "E": {
+      "item": "projecte:relay_mk3"
+    }
+  },
+  "pattern": [
+    "  RRCRR  ",
+    " RKKKKKR ",
+    "RKKKLKKKR",
+    "RKKLELKKR",
+    "CKLECELKC",
+    "RKKLELKKR",
+    "RKKKLKKKR",
+    " RKKKKKR ",
+    "  RRCRR  "
+  ],
+  "result": {
+    "item": "proeritia:klein_star_extend"
+  },
+  "show_notification": true,
+  "tier": 4
+}

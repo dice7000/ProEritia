@@ -1,0 +1,28 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "misc",
+  "key": {
+    "K": {
+      "item": "proeritia:klein_binary_star_extend"
+    },
+    "I": {
+      "item": "avaritia:infinity_catalyst"
+    }
+  },
+  "pattern": [
+    "I   I   I",
+    " I  I  I ",
+    "  I I I  ",
+    "   KKK   ",
+    "IIIKKKIII",
+    "   KKK   ",
+    "  I I I  ",
+    " I  I  I ",
+    "I   I   I"
+  ],
+  "result": {
+    "item": "proeritia:inf_proest"
+  },
+  "show_notification": true,
+  "tier": 4
+}

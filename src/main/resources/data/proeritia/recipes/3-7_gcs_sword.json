@@ -1,0 +1,38 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "R": {
+      "item": "proeritia:ultracompressed_inf_binary_proest"
+    },
+    "K": {
+      "item": "proeritia:ultracompressed_inf_proest"
+    },
+    "B": {
+      "item": "proeritia:gravitational_collapsed_star"
+    },
+    "D": {
+      "item": "proeritia:ultracompressed_klein_star_extend"
+    },
+
+    "S": {
+      "item": "proeritia:ifp_sword"
+    }
+  },
+  "pattern": [
+    "      RRR",
+    "     RKKR",
+    "    RKKKR",
+    "   RKKKR ",
+    "DDRKKKR  ",
+    " BBDKR   ",
+    " BSBR    ",
+    " RBBD    ",
+    "D   D    "
+  ],
+  "result": {
+    "item": "proeritia:gcs_sword"
+  },
+  "show_notification": true,
+  "tier": 4
+}

@@ -1,0 +1,34 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "proeritia:ultracompressed_inf_catalyst"
+    },
+    "P": {
+      "item": "proeritia:ultracompressed_inf_proest"
+    },
+    "S": {
+      "item": "proeritia:ultracompressed_klein_star_extend"
+    },
+    "B": {
+      "item": "proeritia:ultracompressed_inf_binary_proest"
+    }
+  },
+  "pattern": [
+    "  CPPPC  ",
+    " CPSSSPC ",
+    "CPSBBBSPC",
+    "PSBBBBBSP",
+    "PSBBBBBSP",
+    "PSBBBBBSP",
+    "CPSBBBSPC",
+    " CPSSSPC ",
+    "  CPPPC  "
+  ],
+  "result": {
+    "item": "proeritia:gravitational_collapsed_star"
+  },
+  "show_notification": true,
+  "tier": 4
+}

@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "package": "net.dice7000.proeritia.mixin.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "LivingEntityMixin"
+  ]
+}

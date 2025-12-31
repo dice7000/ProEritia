@@ -1,0 +1,38 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:ultracompressed_inf_binary_proest"
+    },
+    "R": {
+      "item": "proeritia:ultracompressed_inf_proest"
+    },
+    "B": {
+      "item": "proeritia:gravitational_collapsed_star"
+    },
+    "D": {
+      "item": "proeritia:ultracompressed_klein_star_extend"
+    },
+
+    "P": {
+      "item": "proeritia:ifp_pickaxe"
+    }
+  },
+  "pattern": [
+    " KKKKKK D",
+    "    KKBB ",
+    "     BPBK",
+    "     BBKK",
+    "    R  KK",
+    "   R    K",
+    "  R     K",
+    " R      K",
+    "B        "
+  ],
+  "result": {
+    "item": "proeritia:gcs_pickaxe"
+  },
+  "show_notification": true,
+  "tier": 4
+}

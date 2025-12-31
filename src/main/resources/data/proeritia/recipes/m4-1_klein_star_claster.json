@@ -1,0 +1,52 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "proeritia:compressed_klein_star_extend"
+    },
+    "U": {
+      "item": "proeritia:ultracompressed_inf_proest"
+    },
+    "O": {
+      "item": "projecte:klein_star_omega"
+    },
+    "S": {
+      "item": "projecte:klein_star_sphere"
+    },
+    "D": {
+      "item": "projecte:klein_star_drei"
+    },
+    "E": {
+      "item": "projecte:klein_star_ein"
+    },
+    "F": {
+      "item": "projecte:mobius_fuel"
+    },
+    "H": {
+      "item": "projecte:high_covalence_dust"
+    },
+    "M": {
+      "item": "projecte:medium_covalence_dust"
+    },
+    "L": {
+      "item": "projecte:low_covalence_dust"
+    }
+  },
+  "pattern": [
+    "   CCC   ",
+    " CCUUUCC ",
+    "CMOOOOOMC",
+    "MOLSDEFOM",
+    "MOLOHOFOM",
+    "MOLEDSFOM",
+    "CMOOOOOMC",
+    " CCUUUCC ",
+    "   CCC   "
+  ],
+  "result": {
+    "item": "proeritia:klein_star_claster"
+  },
+  "show_notification": true,
+  "tier": 4
+}

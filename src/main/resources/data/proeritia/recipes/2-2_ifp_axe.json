@@ -1,0 +1,38 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:inf_binary_proest"
+    },
+    "R": {
+      "item": "proeritia:klein_binary_star_extend"
+    },
+    "B": {
+      "item": "avaritia:infinity_ingot"
+    },
+    "D": {
+      "item": "avaritia:infinity_catalyst"
+    },
+
+    "A": {
+      "item": "proeritia:kse_axe"
+    }
+  },
+  "pattern": [
+    "    KK   ",
+    "   KK  D ",
+    "  KKKBB  ",
+    "  KKBAB  ",
+    "  K BBKK ",
+    "   R  KK ",
+    "  R      ",
+    " R       ",
+    "B        "
+  ],
+  "result": {
+    "item": "proeritia:ifp_axe"
+  },
+  "show_notification": true,
+  "tier": 4
+}

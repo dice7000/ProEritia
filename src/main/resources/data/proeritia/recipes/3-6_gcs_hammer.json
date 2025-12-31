@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:gravitational_collapsed_star"
+    },
+    "R": {
+      "item": "proeritia:ultracompressed_inf_binary_proest"
+    },
+
+    "H": {
+      "item": "proeritia:ifp_hammer"
+    }
+  },
+  "pattern": [
+    "     K   ",
+    "    KKK  ",
+    "     KHK ",
+    "     RKKK",
+    "    R  K ",
+    "   R     ",
+    "  R      ",
+    " R       ",
+    "R        "
+  ],
+  "result": {
+    "item": "proeritia:gcs_hammer"
+  },
+  "show_notification": true,
+  "tier": 4
+}

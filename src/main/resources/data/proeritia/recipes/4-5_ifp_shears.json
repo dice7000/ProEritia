@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "proeritia:infinite_star"
+    },
+    "C": {
+      "item": "proeritia:klein_star_claster"
+    },
+
+    "S": {
+      "item": "proeritia:gcs_shears"
+    }
+  },
+  "pattern": [
+    "     C   ",
+    "    CI   ",
+    "   CI    ",
+    "  CI   IC",
+    " CI   IC ",
+    "CII  IC  ",
+    "CIIIIC   ",
+    "CSIIC    ",
+    " CCC     "
+  ],
+  "result": {
+    "item": "proeritia:inf_shears"
+  },
+  "show_notification": true,
+  "tier": 4
+}

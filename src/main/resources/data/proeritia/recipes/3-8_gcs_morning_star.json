@@ -1,0 +1,38 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "R": {
+      "item": "proeritia:gravitational_collapsed_star"
+    },
+    "K": {
+      "item": "proeritia:ultracompressed_inf_binary_proest"
+    },
+
+    "P": {
+      "item": "proeritia:ifp_pickaxe"
+    },
+    "H": {
+      "item": "proeritia:ifp_hammer"
+    },
+    "S": {
+      "item": "proeritia:ifp_shovel"
+    }
+  },
+  "pattern": [
+    "    KKK  ",
+    "    KPKK ",
+    "    KKHKK",
+    "     RKSK",
+    "    R KKK",
+    "   R     ",
+    "  R      ",
+    " R       ",
+    "R        "
+  ],
+  "result": {
+    "item": "proeritia:gcs_morning_star"
+  },
+  "show_notification": true,
+  "tier": 4
+}

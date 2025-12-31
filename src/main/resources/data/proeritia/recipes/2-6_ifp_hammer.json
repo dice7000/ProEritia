@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:inf_binary_proest"
+    },
+    "R": {
+      "item": "proeritia:klein_binary_star_extend"
+    },
+
+    "H": {
+      "item": "proeritia:kse_hammer"
+    }
+  },
+  "pattern": [
+    "     K   ",
+    "    KKK  ",
+    "     KHK ",
+    "     RKKK",
+    "    R  K ",
+    "   R     ",
+    "  R      ",
+    " R       ",
+    "R        "
+  ],
+  "result": {
+    "item": "proeritia:ifp_hammer"
+  },
+  "show_notification": true,
+  "tier": 4
+}

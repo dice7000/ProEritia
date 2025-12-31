@@ -1,0 +1,43 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:klein_binary_star_extend"
+    },
+    "R": {
+      "item": "projecte:red_matter_block"
+    },
+    "D": {
+      "item": "projecte:dark_matter_block"
+    },
+    "H": {
+      "item": "proeritia:kse_hoe"
+    },
+    "E": {
+      "item": "proeritia:kse_shears"
+    },
+    "A": {
+      "item": "proeritia:kse_axe"
+    },
+    "S": {
+      "item": "proeritia:kse_sword"
+    }
+  },
+  "pattern": [
+    "      KK ",
+    "     KSK ",
+    "    KAK  ",
+    "   KEK   ",
+    "  KHKKK  ",
+    " KKKRRK  ",
+    "DDRRRK   ",
+    " DDRK    ",
+    "  DD     "
+  ],
+  "result": {
+    "item": "proeritia:kse_katar"
+  },
+  "show_notification": true,
+  "tier": 4
+}

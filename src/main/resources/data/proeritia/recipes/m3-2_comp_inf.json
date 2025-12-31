@@ -1,0 +1,25 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "misc",
+  "key": {
+    "K": {
+      "item": "avaritia:infinity_catalyst"
+    }
+  },
+  "pattern": [
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK"
+  ],
+  "result": {
+    "item": "proeritia:compressed_inf_catalyst"
+  },
+  "show_notification": true,
+  "tier": 4
+}

@@ -1,0 +1,38 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:klein_binary_star_extend"
+    },
+    "R": {
+      "item": "projecte:red_matter"
+    },
+    "B": {
+      "item": "projecte:red_matter_block"
+    },
+    "D": {
+      "item": "projecte:dark_matter"
+    },
+
+    "S": {
+      "item": "projecte:rm_sword"
+    }
+  },
+  "pattern": [
+    "      RRR",
+    "     RKKR",
+    "    RKKKR",
+    "   RKKKR ",
+    "DDRKKKR  ",
+    " BBDKR   ",
+    " BSBR    ",
+    " RBBD    ",
+    "B   D    "
+  ],
+  "result": {
+    "item": "proeritia:kse_sword"
+  },
+  "show_notification": true,
+  "tier": 4
+}

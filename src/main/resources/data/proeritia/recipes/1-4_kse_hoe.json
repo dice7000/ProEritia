@@ -1,0 +1,35 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:klein_binary_star_extend"
+    },
+    "R": {
+      "item": "projecte:red_matter"
+    },
+    "B": {
+      "item": "projecte:red_matter_block"
+    },
+
+    "H": {
+      "item": "projecte:rm_hoe"
+    }
+  },
+  "pattern": [
+    " KKKKKKBB",
+    "  KKKKBHB",
+    "      BBK",
+    "     R KK",
+    "    R    ",
+    "   R     ",
+    "  R      ",
+    " R       ",
+    "B        "
+  ],
+  "result": {
+    "item": "proeritia:kse_hoe"
+  },
+  "show_notification": true,
+  "tier": 4
+}

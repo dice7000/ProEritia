@@ -1,0 +1,25 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "misc",
+  "key": {
+    "K": {
+      "item": "proeritia:compressed_klein_star_extend"
+    }
+  },
+  "pattern": [
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK"
+  ],
+  "result": {
+    "item": "proeritia:ultracompressed_klein_star_extend"
+  },
+  "show_notification": true,
+  "tier": 4
+}

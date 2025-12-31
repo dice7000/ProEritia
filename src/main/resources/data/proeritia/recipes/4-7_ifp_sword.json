@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "proeritia:infinite_star"
+    },
+    "C": {
+      "item": "proeritia:klein_star_claster"
+    },
+
+    "S": {
+      "item": "proeritia:gcs_sword"
+    }
+  },
+  "pattern": [
+    "      III",
+    "     IIII",
+    "    IIIII",
+    "   IIIII ",
+    "CCIIIII  ",
+    " IICII   ",
+    " ISII    ",
+    "CCIIC    ",
+    "CC  C    "
+  ],
+  "result": {
+    "item": "proeritia:inf_sword"
+  },
+  "show_notification": true,
+  "tier": 4
+}

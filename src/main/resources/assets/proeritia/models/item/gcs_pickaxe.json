@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "proeritia:item/gcs_tools/1pickaxe"
+  }
+}

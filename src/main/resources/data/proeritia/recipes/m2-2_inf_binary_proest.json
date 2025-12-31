@@ -1,0 +1,31 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "misc",
+  "key": {
+    "K": {
+      "item": "proeritia:klein_binary_star_extend"
+    },
+    "I": {
+      "item": "avaritia:infinity_catalyst"
+    },
+    "P": {
+      "item": "proeritia:inf_proest"
+    }
+  },
+  "pattern": [
+    "KPPKIKPPK",
+    "PPPPIPPPP",
+    "PPPPIPPPP",
+    "KPPKIKPPK",
+    "IIIIIIIII",
+    "KPPKIKPPK",
+    "PPPPIPPPP",
+    "PPPPIPPPP",
+    "KPPKIKPPK"
+  ],
+  "result": {
+    "item": "proeritia:inf_binary_proest"
+  },
+  "show_notification": true,
+  "tier": 4
+}

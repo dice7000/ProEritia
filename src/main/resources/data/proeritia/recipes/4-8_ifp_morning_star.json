@@ -1,0 +1,41 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "proeritia:infinite_star"
+    },
+    "C": {
+      "item": "proeritia:klein_star_claster"
+    },
+
+    "P": {
+      "item": "proeritia:inf_pickaxe"
+    },
+    "H": {
+      "item": "proeritia:inf_hammer"
+    },
+    "S": {
+      "item": "proeritia:inf_shovel"
+    },
+    "M": {
+      "item": "proeritia:gcs_morning_star"
+    }
+  },
+  "pattern": [
+    "   I II  ",
+    "    IIII ",
+    "   IPIMII",
+    "    IHIII",
+    "    CISI ",
+    "   C  I I",
+    "  C      ",
+    "CC       ",
+    "CC       "
+  ],
+  "result": {
+    "item": "proeritia:inf_morning_star"
+  },
+  "show_notification": true,
+  "tier": 4
+}

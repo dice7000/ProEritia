@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "proeritia:item/material/ultracompressed_inf_binary_proest",
+    "halo": "avaritia:misc/halo"
+  },
+  "loader": "avaritia:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -16777216,
+    "size": 8,
+    "pulse": true
+  }
+}

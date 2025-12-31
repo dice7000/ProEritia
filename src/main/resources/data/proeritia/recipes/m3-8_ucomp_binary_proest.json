@@ -1,0 +1,25 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "misc",
+  "key": {
+    "K": {
+      "item": "proeritia:compressed_inf_binary_proest"
+    }
+  },
+  "pattern": [
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK",
+    "KKKKKKKKK"
+  ],
+  "result": {
+    "item": "proeritia:ultracompressed_inf_binary_proest"
+  },
+  "show_notification": true,
+  "tier": 4
+}

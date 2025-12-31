@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "proeritia:infinite_star"
+    },
+    "C": {
+      "item": "proeritia:klein_star_claster"
+    },
+
+    "H": {
+      "item": "proeritia:gcs_hoe"
+    }
+  },
+  "pattern": [
+    "IIIIIIICC",
+    " IIIIICHC",
+    "      CCI",
+    "     C II",
+    "    C  II",
+    "   C     ",
+    "  C      ",
+    "CC       ",
+    "CC       "
+  ],
+  "result": {
+    "item": "proeritia:inf_hoe"
+  },
+  "show_notification": true,
+  "tier": 4
+}

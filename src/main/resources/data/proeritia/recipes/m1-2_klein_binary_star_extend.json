@@ -1,0 +1,28 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "misc",
+  "key": {
+    "K": {
+      "item": "proeritia:klein_star_extend"
+    },
+    "R": {
+      "item": "projecte:red_matter"
+    }
+  },
+  "pattern": [
+    "    R    ",
+    "   RKR   ",
+    "   RKR   ",
+    " RRRKRRR ",
+    "RKKKKKKKR",
+    " RRRKRRR ",
+    "   RKR   ",
+    "   RKR   ",
+    "    R    "
+  ],
+  "result": {
+    "item": "proeritia:klein_binary_star_extend"
+  },
+  "show_notification": true,
+  "tier": 4
+}

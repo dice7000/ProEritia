@@ -1,0 +1,46 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "proeritia:compressed_klein_star_extend"
+    },
+    "P": {
+      "item": "proeritia:ultracompressed_inf_proest"
+    },
+    "U": {
+      "item": "proeritia:ultracompressed_inf_binary_proest"
+    },
+    "E": {
+      "item": "proeritia:klein_star_extend"
+    },
+    "G": {
+      "item": "proeritia:gravitational_collapsed_star"
+    },
+    "K": {
+      "item": "proeritia:ultracompressed_klein_star_extend"
+    },
+    "B": {
+      "item": "proeritia:klein_binary_star_extend"
+    },
+    "L": {
+      "item": "proeritia:klein_star_claster"
+    }
+  },
+  "pattern": [
+    "  EEEEE  ",
+    " CPPPPPC ",
+    "CPUUUUUPC",
+    "PPGGGGGPP",
+    "PPKBLBKPP",
+    "PPGGGGGPP",
+    "CPUUUUUPC",
+    " CPPPPPC ",
+    "  CPPPC  "
+  ],
+  "result": {
+    "item": "proeritia:infinite_star"
+  },
+  "show_notification": true,
+  "tier": 4
+}

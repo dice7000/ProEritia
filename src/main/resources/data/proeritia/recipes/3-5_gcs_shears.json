@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:gravitational_collapsed_star"
+    },
+    "R": {
+      "item": "proeritia:ultracompressed_inf_proest"
+    },
+
+    "S": {
+      "item": "proeritia:ifp_shears"
+    }
+  },
+  "pattern": [
+    "     R   ",
+    "    RK   ",
+    "   RK    ",
+    "  RK   KR",
+    " RK   KR ",
+    "RKR  KR  ",
+    "RRRRKR   ",
+    "RSRKR    ",
+    " RRR     "
+  ],
+  "result": {
+    "item": "proeritia:gcs_shears"
+  },
+  "show_notification": true,
+  "tier": 4
+}

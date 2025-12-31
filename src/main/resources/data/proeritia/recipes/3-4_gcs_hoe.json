@@ -1,0 +1,35 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:ultracompressed_inf_binary_proest"
+    },
+    "R": {
+      "item": "proeritia:ultracompressed_inf_proest"
+    },
+    "B": {
+      "item": "proeritia:gravitational_collapsed_star"
+    },
+
+    "H": {
+      "item": "proeritia:ifp_hoe"
+    }
+  },
+  "pattern": [
+    " KKKKKKBB",
+    "  KKKKBHB",
+    "      BBK",
+    "     R KK",
+    "    R    ",
+    "   R     ",
+    "  R      ",
+    " R       ",
+    "B        "
+  ],
+  "result": {
+    "item": "proeritia:gcs_hoe"
+  },
+  "show_notification": true,
+  "tier": 4
+}
