@@ -12,7 +12,7 @@
   "item.proeritia.kse_katar": "Klein Star Katar",
 
   "item.proeritia.inf_proest": "Infinity ProEst",
-  "item.proeritia.inf_binary_proest": "Infinity Binary ProEst",
+  "item.proeritia.inf_binary_proest": "Infinity ProEst Group",
 
   "item.proeritia.ifp_pickaxe": "ProEst Pickaxe",
   "item.proeritia.ifp_axe": "ProEst Axe",
@@ -27,11 +27,11 @@
   "item.proeritia.compressed_klein_star_extend": "Compressed Klein Star Extend",
   "item.proeritia.compressed_inf_catalyst": "Compressed Infinity Catalyst",
   "item.proeritia.compressed_inf_proest": "Compressed Infinity ProEst",
-  "item.proeritia.compressed_inf_binary_proest": "Compressed Infinity Binary ProEst",
+  "item.proeritia.compressed_inf_binary_proest": "Compressed Infinity ProEst　Group",
   "item.proeritia.ultracompressed_klein_star_extend": "Ultracompressed Klein Star Extend",
   "item.proeritia.ultracompressed_inf_catalyst": "Ultracompressed Infinity Catalyst",
   "item.proeritia.ultracompressed_inf_proest": "Ultracompressed Infinity ProEst",
-  "item.proeritia.ultracompressed_binary_inf_proest": "Ultracompressed Infinity Binary ProEst",
+  "item.proeritia.ultracompressed_binary_inf_proest": "Ultracompressed Infinity ProEst Group",
   "item.proeritia.gravitational_collapsed_star": "Gravitational Collapsed Star",
 
   "item.proeritia.gcs_pickaxe": "Gravitational Collapser Pickaxe",
@@ -44,8 +44,8 @@
   "item.proeritia.gcs_morning_star": "Gravitational Collapser Morning Star",
   "item.proeritia.gcs_katar": "Gravitational Collapser Katar",
 
-  "item.proeritia.klein_star_claster": "Klein Star Claster",
-  "item.proeritia.infinite_star": "Infinite Star",
+  "item.proeritia.klein_star_claster": "Klein Star Cluster",
+  "item.proeritia.infinite_star": "True Infinite Star",
 
   "item.proeritia.inf_pickaxe": "Infinite Pickaxe",
   "item.proeritia.inf_axe": "Infinite Axe",
