@@ -23,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class PERKatar extends PEKatar {
+public class PERKatar extends PEKatar implements PERTools{
     private final ProEritiaMatterType matterType;
     private final ILangEntry[] modeDesc;
 

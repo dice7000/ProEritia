@@ -9,11 +9,12 @@ import moze_intel.projecte.utils.ToolHelper;
 import moze_intel.projecte.utils.text.ILangEntry;
 import moze_intel.projecte.utils.text.PELang;
 import net.dice7000.proeritia.registry.ProEritiaMatterType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class PERMorningStar extends PEMorningStar {
+public class PERMorningStar extends PEMorningStar implements PERTools{
     private final ProEritiaMatterType matterType;
     private final ILangEntry[] modeDesc;
 
@@ -36,5 +37,11 @@ public class PERMorningStar extends PEMorningStar {
 
     public ILangEntry[] getModeDesc() {
         return modeDesc;
+    }
+
+    @Override
+    public boolean hurtEnemy(@NotNull ItemStack stack, @NotNull LivingEntity damaged, @NotNull LivingEntity damager) {
+        PERToolHelper.attackWithChargeOnPER(stack, damaged, damager, 1.0F);
+        return true;
     }
 }

@@ -104,23 +104,23 @@ public class ProEritiaItems {
             ("infinite_star", () -> new InfiniteStarItem(new Item.Properties()));
 
     public static final RegistryObject<Item> INF_PICKAXE = PROERITIA_ITEMS.register
-            ("inf_pickaxe", () -> new PERPickaxe(ProEritiaMatterType.GCS, 1000, new Item.Properties()));
+            ("inf_pickaxe", () -> new PERPickaxe(ProEritiaMatterType.INF, 1000, new Item.Properties()));
     public static final RegistryObject<Item> INF_AXE = PROERITIA_ITEMS.register
-            ("inf_axe", () -> new PERAxe(ProEritiaMatterType.GCS, 1000, new Item.Properties()));
+            ("inf_axe", () -> new PERAxe(ProEritiaMatterType.INF, 1000, new Item.Properties()));
     public static final RegistryObject<Item> INF_SHOVEL = PROERITIA_ITEMS.register
-            ("inf_shovel", () -> new PERShovel(ProEritiaMatterType.GCS, 1000, new Item.Properties()));
+            ("inf_shovel", () -> new PERShovel(ProEritiaMatterType.INF, 1000, new Item.Properties()));
     public static final RegistryObject<Item> INF_HOE = PROERITIA_ITEMS.register
-            ("inf_hoe", () -> new PERHoe(ProEritiaMatterType.GCS, 1000, new Item.Properties()));
+            ("inf_hoe", () -> new PERHoe(ProEritiaMatterType.INF, 1000, new Item.Properties()));
     public static final RegistryObject<Item> INF_SHEARS = PROERITIA_ITEMS.register
-            ("inf_shears", () -> new PERShears(ProEritiaMatterType.GCS, 1000, new Item.Properties()));
+            ("inf_shears", () -> new PERShears(ProEritiaMatterType.INF, 1000, new Item.Properties()));
     public static final RegistryObject<Item> INF_HAMMER = PROERITIA_ITEMS.register
-            ("inf_hammer", () -> new PERHammer(ProEritiaMatterType.GCS, 1000, new Item.Properties()));
+            ("inf_hammer", () -> new PERHammer(ProEritiaMatterType.INF, 1000, new Item.Properties()));
     public static final RegistryObject<Item> INF_SWORD = PROERITIA_ITEMS.register
-            ("inf_sword", () -> new PERSword(ProEritiaMatterType.GCS, 1000, 60000, new Item.Properties()));
+            ("inf_sword", () -> new PERSword(ProEritiaMatterType.INF, 1000, 60000, new Item.Properties()));
     public static final RegistryObject<Item> INF_MORNINGSTAR = PROERITIA_ITEMS.register
-            ("inf_morning_star", () -> new PERMorningStar(ProEritiaMatterType.GCS, 1000, new Item.Properties()));
+            ("inf_morning_star", () -> new PERMorningStar(ProEritiaMatterType.INF, 1000, new Item.Properties()));
     public static final RegistryObject<Item> INF_KATAR = PROERITIA_ITEMS.register
-            ("inf_katar", () -> new PERKatar(ProEritiaMatterType.GCS, 1000, new Item.Properties()));
+            ("inf_katar", () -> new PERKatar(ProEritiaMatterType.INF, 1000, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         PROERITIA_ITEMS.register(eventBus);

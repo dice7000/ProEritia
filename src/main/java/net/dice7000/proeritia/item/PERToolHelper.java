@@ -26,12 +26,14 @@ import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.IForgeShearable;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +42,7 @@ import java.util.function.Predicate;
 public class PERToolHelper extends ToolHelper {
     private static final Predicate<? super Entity> SLAY_MOB = (entity) -> !entity.isSpectator() && entity instanceof Enemy;
     private static final Predicate<? super Entity> SLAY_ALL = (entity) -> !entity.isSpectator() && (entity instanceof Enemy || entity instanceof LivingEntity);
-    private static final Predicate<? super Entity> SHEARABLE = (entity) -> !entity.isSpectator() && entity instanceof IForgeShearable;;
+    private static final Predicate<? super Entity> SHEARABLE = (entity) -> !entity.isSpectator() && entity instanceof IForgeShearable;
 
     public static float getDestroySpeed(float parentDestroySpeed, ProEritiaMatterType matterType, int charge) {
         return parentDestroySpeed == 1.0F ? parentDestroySpeed : parentDestroySpeed + matterType.getChargeModifier() * (float)charge;
@@ -59,6 +61,7 @@ public class PERToolHelper extends ToolHelper {
     }
 
     public static void attackWithChargeOnPER(ItemStack stack, LivingEntity damaged, LivingEntity damager, float baseDmg) {
+        Item item = stack.getItem();
         if (damager instanceof Player player) {
             if (!damager.level().isClientSide) {
                 int charge = getPERCharge(stack);
@@ -67,15 +70,12 @@ public class PERToolHelper extends ToolHelper {
                 if (charge > 0) {
                     dmg = PEDamageTypes.BYPASS_ARMOR_PLAYER_ATTACK.source(player);
                     totalDmg = baseDmg + (float)charge;
-                } else {
-                    dmg = damager.damageSources().playerAttack(player);
-                }
-                //damaged.hurt(dmg, totalDmg);
+                } else {dmg = damager.damageSources().playerAttack(player);}
 
-                ProEritiaMatterType matterType = null;
-
-                if (stack.getItem() instanceof PERKatar katar) matterType = katar.getMatterType();
+                ProEritiaMatterType matterType = getProEritiaMatterType(item);
                 if (matterType == null) return;
+
+                damaged.hurt(player.damageSources().genericKill(), 0);
                 switch (matterType) {
                     case  KSE -> damaged.hurt(player.damageSources().playerAttack(player), 2000000000);
                     case  IFP -> damaged.setHealth(0);
@@ -84,12 +84,26 @@ public class PERToolHelper extends ToolHelper {
                         ((LivingEntityMixinMethod) damaged).proEritia$anotherSetHealth(0);
                         if (!(damaged instanceof Player)) ((LivingEntityMixinMethod) damaged).proEritia$setForceDeath(true);
                     }
+                    default -> damaged.hurt(dmg, totalDmg);
                 }
-                damaged.hurt(player.damageSources().genericKill(), 0);
-                return;
             }
         }
 
+    }
+
+    private static @Nullable ProEritiaMatterType getProEritiaMatterType(Item item) {
+        ProEritiaMatterType matterType = null;
+        if (item instanceof PERTools tools) {
+            ProEritiaMatterType handover = tools.getMatterType();
+            if (!(item instanceof PERKatar) && !(item instanceof PERSword)) {
+                if (handover == ProEritiaMatterType.INF | handover == ProEritiaMatterType.GCS) matterType = ProEritiaMatterType.IFP;
+            } else if (item instanceof PERSword && handover == ProEritiaMatterType.INF) {
+                matterType = ProEritiaMatterType.GCS;
+            } else {
+                matterType = handover;
+            }
+        }
+        return matterType;
     }
 
     public static void attackAOEonPER(ItemStack stack, Player player, boolean slayAll,  long emcCost, InteractionHand hand) {
@@ -123,7 +137,7 @@ public class PERToolHelper extends ToolHelper {
             }
 
             if (hasAction) {
-                level.playSound((Player)null, player.getX(), player.getY(), player.getZ(), (SoundEvent) PESoundEvents.CHARGE.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+                level.playSound((Player) null, player.getX(), player.getY(), player.getZ(), (SoundEvent) PESoundEvents.CHARGE.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
                 PlayerHelper.swingItem(player, hand);
             }
 

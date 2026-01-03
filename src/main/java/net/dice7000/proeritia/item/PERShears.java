@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.TierSortingRegistry;
 import org.jetbrains.annotations.NotNull;
 
-public class PERShears extends PEShears {
+public class PERShears extends PEShears implements PERTools{
     private final ProEritiaMatterType matterType;
     private final int numCharges;
 
