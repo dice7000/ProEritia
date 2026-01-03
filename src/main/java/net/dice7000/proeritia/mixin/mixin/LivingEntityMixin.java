@@ -2,7 +2,6 @@ package net.dice7000.proeritia.mixin.mixin;
 
 import net.dice7000.proeritia.mixin.method.LivingEntityMixinMethod;
 import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Final;
@@ -12,15 +11,12 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin implements LivingEntityMixinMethod {
     @Shadow @Final private static EntityDataAccessor<Float> DATA_HEALTH_ID;
-    @Shadow protected abstract void tickDeath();
-
-    @Shadow
-    public abstract void remove(Entity.RemovalReason pReason);
-
+    @Shadow public abstract void remove(Entity.RemovalReason pReason);
     @Override public void proEritia$anotherSetHealth(float value) { ((LivingEntity) (Object) this).getEntityData().set(DATA_HEALTH_ID, value);}
     @Unique private boolean proEritia$moveDeathTime = false;
     @Unique private boolean proEritia$forceDeath = false;
@@ -33,13 +29,12 @@ public abstract class LivingEntityMixin implements LivingEntityMixinMethod {
             proEritia$moveDeathTime = false;
         }
     }
+
     @Override public void proEritia$setForceDeath(boolean forceDeath) {
         proEritia$forceDeath = forceDeath;
     }
 
-    @Unique
-    int proEritia$anotherDeathTime = 0;
-
+    @Unique int proEritia$anotherDeathTime = 0;
     @Unique protected void proEritia$anotherTickDeath() {
         ++proEritia$anotherDeathTime;
         if (this.proEritia$anotherDeathTime >= 20 && !(((LivingEntity) (Object) this).level().isClientSide()) && !(((LivingEntity) (Object) this).isRemoved())) {
