@@ -1,27 +1,27 @@
-package net.dice7000.proeritia.item;
+package net.dice7000.proeritia.item.tool;
 
 import moze_intel.projecte.gameObjs.EnumMatterType;
 import moze_intel.projecte.gameObjs.PETags;
-import moze_intel.projecte.gameObjs.items.tools.PEAxe;
 import moze_intel.projecte.gameObjs.items.tools.PESword;
-import moze_intel.projecte.utils.ToolHelper;
-import net.dice7000.proeritia.registry.ProEritiaMatterType;
+import net.dice7000.proeritia.item.PERToolHelper;
+import net.dice7000.proeritia.registry.PERMatterType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class PERSword extends PESword implements PERTools{
-    private final ProEritiaMatterType matterType;
+public class PERSword extends PESword implements PERTools {
+    private final PERMatterType matterType;
     private final int numCharges;
 
-    public PERSword(ProEritiaMatterType proEritiaMatterType, int numCharges, int damage, Properties props) {
-        super(EnumMatterType.RED_MATTER, numCharges, damage, props);
-        this.matterType = proEritiaMatterType;
-        this.numCharges = numCharges;
+    public PERSword(PERMatterType matterType) {
+        super(EnumMatterType.RED_MATTER, matterType.getChargeModifier(), matterType.getDamageOnregistry(), new Item.Properties());
+        this.matterType = matterType;
+        this.numCharges = matterType.getChargeModifier();
     }
 
-    public ProEritiaMatterType getMatterType() {
+    public PERMatterType getMatterType() {
         return matterType;
     }
 

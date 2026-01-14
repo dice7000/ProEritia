@@ -1,31 +1,32 @@
-package net.dice7000.proeritia.item;
+package net.dice7000.proeritia.item.tool;
 
 import moze_intel.projecte.gameObjs.EnumMatterType;
 import moze_intel.projecte.gameObjs.PETags;
 import moze_intel.projecte.gameObjs.items.tools.PEShears;
 import moze_intel.projecte.utils.ItemHelper;
-import moze_intel.projecte.utils.ToolHelper;
-import net.dice7000.proeritia.registry.ProEritiaMatterType;
+import net.dice7000.proeritia.item.PERToolHelper;
+import net.dice7000.proeritia.registry.PERMatterType;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.TierSortingRegistry;
 import org.jetbrains.annotations.NotNull;
 
-public class PERShears extends PEShears implements PERTools{
-    private final ProEritiaMatterType matterType;
+public class PERShears extends PEShears implements PERTools {
+    private final PERMatterType matterType;
     private final int numCharges;
 
-    public PERShears(ProEritiaMatterType proEritiaMatterType, int numCharges, Properties props) {
-        super(EnumMatterType.RED_MATTER, numCharges, props);
-        this.matterType = proEritiaMatterType;
-        this.numCharges = numCharges;
+    public PERShears(PERMatterType matterType) {
+        super(EnumMatterType.RED_MATTER, matterType.getChargeModifier(), new Item.Properties());
+        this.matterType = matterType;
+        this.numCharges = matterType.getChargeModifier();
     }
 
-    public ProEritiaMatterType getMatterType() {
+    public PERMatterType getMatterType() {
         return matterType;
     }
 

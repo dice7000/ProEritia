@@ -1,35 +1,31 @@
-package net.dice7000.proeritia.item;
+package net.dice7000.proeritia.item.tool;
 
 import moze_intel.projecte.capability.ModeChangerItemCapabilityWrapper;
-import moze_intel.projecte.config.ProjectEConfig;
 import moze_intel.projecte.gameObjs.EnumMatterType;
 import moze_intel.projecte.gameObjs.items.tools.PEKatar;
 import moze_intel.projecte.utils.ItemHelper;
 import moze_intel.projecte.utils.PlayerHelper;
-import moze_intel.projecte.utils.ToolHelper;
 import moze_intel.projecte.utils.text.ILangEntry;
 import moze_intel.projecte.utils.text.PELang;
-import net.dice7000.proeritia.mixin.method.LivingEntityMixinMethod;
-import net.dice7000.proeritia.registry.ProEritiaMatterType;
+import net.dice7000.proeritia.item.PERToolHelper;
+import net.dice7000.proeritia.registry.PERMatterType;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-
-public class PERKatar extends PEKatar implements PERTools{
-    private final ProEritiaMatterType matterType;
+public class PERKatar extends PEKatar implements PERTools {
+    private final PERMatterType matterType;
     private final ILangEntry[] modeDesc;
 
-    public PERKatar(ProEritiaMatterType proEritiaMatterType, int numCharges, Properties props) {
-        super(EnumMatterType.RED_MATTER, numCharges, props);
-        this.matterType = proEritiaMatterType;
+    public PERKatar(PERMatterType matterType) {
+        super(EnumMatterType.RED_MATTER, matterType.getChargeModifier(), new Item.Properties());
+        this.matterType = matterType;
         this.modeDesc = new ILangEntry[]{PELang.MODE_MORNING_STAR_1, PELang.MODE_MORNING_STAR_2, PELang.MODE_MORNING_STAR_3, PELang.MODE_MORNING_STAR_4};
         this.addItemCapability(ModeChangerItemCapabilityWrapper::new);
 
@@ -70,7 +66,7 @@ public class PERKatar extends PEKatar implements PERTools{
         return ItemHelper.actionResultFromType(PERToolHelper.shearEntityAOEonPER(player, hand, 0L), player.getItemInHand(hand));
     }
 
-    public ProEritiaMatterType getMatterType() {
+    public PERMatterType getMatterType() {
         return matterType;
     }
 

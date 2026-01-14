@@ -1,23 +1,26 @@
-package net.dice7000.proeritia.item;
+package net.dice7000.proeritia.item.tool;
 
 import moze_intel.projecte.gameObjs.EnumMatterType;
-import moze_intel.projecte.gameObjs.items.tools.PEShovel;
-import moze_intel.projecte.utils.ToolHelper;
-import net.dice7000.proeritia.registry.ProEritiaMatterType;
+import moze_intel.projecte.gameObjs.items.tools.PEHoe;
+import net.dice7000.proeritia.item.PERToolHelper;
+import net.dice7000.proeritia.registry.PERMatterType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class PERShovel extends PEShovel implements PERTools{
-    private final ProEritiaMatterType matterType;
+public class PERHoe extends PEHoe implements PERTools {
+    private final PERMatterType matterType;
+    private final int numCharges;
 
-    public PERShovel(ProEritiaMatterType proEritiaMatterType, int numCharges, Properties props) {
-        super(EnumMatterType.RED_MATTER, numCharges, props);
-        this.matterType = proEritiaMatterType;
+    public PERHoe(PERMatterType matterType) {
+        super(EnumMatterType.RED_MATTER, matterType.getChargeModifier(), new Item.Properties());
+        this.matterType = matterType;
+        this.numCharges = matterType.getChargeModifier();
     }
 
-    public ProEritiaMatterType getMatterType() {
+    public PERMatterType getMatterType() {
         return matterType;
     }
 
@@ -30,5 +33,8 @@ public class PERShovel extends PEShovel implements PERTools{
     public boolean hurtEnemy(@NotNull ItemStack stack, @NotNull LivingEntity damaged, @NotNull LivingEntity damager) {
         PERToolHelper.attackWithChargeOnPER(stack, damaged, damager, 1.0F);
         return true;
+    }
+    public int getNumCharges() {
+        return numCharges;
     }
 }

@@ -1,24 +1,24 @@
-package net.dice7000.proeritia.item;
+package net.dice7000.proeritia.item.tool;
 
 import moze_intel.projecte.gameObjs.EnumMatterType;
-import moze_intel.projecte.gameObjs.items.tools.PEAxe;
 import moze_intel.projecte.gameObjs.items.tools.PEHammer;
-import moze_intel.projecte.utils.ToolHelper;
-import net.dice7000.proeritia.registry.ProEritiaMatterType;
+import net.dice7000.proeritia.item.PERToolHelper;
+import net.dice7000.proeritia.registry.PERMatterType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class PERHammer extends PEHammer implements PERTools{
-    private final ProEritiaMatterType matterType;
+public class PERHammer extends PEHammer implements PERTools {
+    private final PERMatterType matterType;
 
-    public PERHammer(ProEritiaMatterType proEritiaMatterType, int numCharges, Properties props) {
-        super(EnumMatterType.RED_MATTER, numCharges, props);
-        this.matterType = proEritiaMatterType;
+    public PERHammer(PERMatterType matterType) {
+        super(EnumMatterType.RED_MATTER, matterType.getChargeModifier(), new Item.Properties());
+        this.matterType = matterType;
     }
 
-    public ProEritiaMatterType getMatterType() {
+    public PERMatterType getMatterType() {
         return matterType;
     }
 

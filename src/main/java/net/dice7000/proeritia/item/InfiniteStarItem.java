@@ -13,8 +13,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class InfiniteStarItem extends Item {
-    public InfiniteStarItem(Properties pProperties) {
-        super(pProperties);
+    public InfiniteStarItem() {
+        super(new Properties());
     }
 
     @Override

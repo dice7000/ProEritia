@@ -2,6 +2,8 @@ package net.dice7000.proeritia.mixin.mixin;
 
 import net.dice7000.proeritia.mixin.method.LivingEntityMixinMethod;
 import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Final;
@@ -18,16 +20,16 @@ public abstract class LivingEntityMixin implements LivingEntityMixinMethod {
     @Shadow @Final private static EntityDataAccessor<Float> DATA_HEALTH_ID;
     @Shadow public abstract void remove(Entity.RemovalReason pReason);
     @Override public void proEritia$anotherSetHealth(float value) { ((LivingEntity) (Object) this).getEntityData().set(DATA_HEALTH_ID, value);}
-    @Unique private boolean proEritia$moveDeathTime = false;
+    //@Unique private boolean proEritia$moveDeathTime = false;
     @Unique private boolean proEritia$forceDeath = false;
     @Inject(method = "baseTick", at = @At("TAIL"))
     public void baseTickInject(CallbackInfo ci) {
         if (proEritia$forceDeath) {
             proEritia$anotherTickDeath();
-            proEritia$moveDeathTime = true;
-        } else {
-            proEritia$moveDeathTime = false;
-        }
+            //proEritia$moveDeathTime = true;
+        } //else {
+            //proEritia$moveDeathTime = false;
+        //}
     }
 
     @Override public void proEritia$setForceDeath(boolean forceDeath) {
@@ -37,11 +39,28 @@ public abstract class LivingEntityMixin implements LivingEntityMixinMethod {
     @Unique int proEritia$anotherDeathTime = 0;
     @Unique protected void proEritia$anotherTickDeath() {
         ++proEritia$anotherDeathTime;
-        if (this.proEritia$anotherDeathTime >= 20 && !(((LivingEntity) (Object) this).level().isClientSide()) && !(((LivingEntity) (Object) this).isRemoved())) {
+        if (((LivingEntity) (Object) this) instanceof LivingEntity &&
+                             this.proEritia$anotherDeathTime >= 20 &&
+          !(((LivingEntity) (Object) this).level().isClientSide()) &&
+                    !(((LivingEntity) (Object) this).isRemoved())) {
             ((LivingEntity) (Object) this).level().broadcastEntityEvent(((LivingEntity) (Object) this), (byte)60);
             remove(Entity.RemovalReason.KILLED);
         }
 
     }
 
+    @Unique private boolean proEritia$isEffectCancel = false;
+    @Override public void proEritia$toggleEffectCancel() {
+        proEritia$isEffectCancel = !proEritia$isEffectCancel;
+    }
+
+    @Inject(method = "addEffect(Lnet/minecraft/world/effect/MobEffectInstance;Lnet/minecraft/world/entity/Entity;)Z", at = @At("HEAD"), cancellable = true)
+    public void addEffectInject(MobEffectInstance pEffectInstance, Entity pEntity, CallbackInfoReturnable<Boolean> cir) {
+        if (proEritia$isEffectCancel) cir.cancel();
+    }
+
+    @Inject(method = "removeEffect", at = @At("HEAD"), cancellable = true)
+    public void removeEffectInject(MobEffect pEffect, CallbackInfoReturnable<Boolean> cir) {
+        if (proEritia$isEffectCancel) cir.cancel();
+    }
 }

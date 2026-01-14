@@ -21,7 +21,7 @@ public class Config
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
     private static final ForgeConfigSpec.BooleanValue SERVER_FRIENDLY_MODE = BUILDER
-            .comment("Set server-friendly mode. Default: false")
+            .comment("Set server-friendly mode. Default: false (unused)")
             .define("ServerFriendlyMode", false);
 
     /*

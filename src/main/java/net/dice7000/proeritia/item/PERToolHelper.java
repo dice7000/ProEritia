@@ -1,7 +1,6 @@
 package net.dice7000.proeritia.item;
 
 import moze_intel.projecte.api.capabilities.PECapabilities;
-import moze_intel.projecte.gameObjs.EnumMatterType;
 import moze_intel.projecte.gameObjs.blocks.IMatterBlock;
 import moze_intel.projecte.gameObjs.items.ItemPE;
 import moze_intel.projecte.gameObjs.registries.PEDamageTypes;
@@ -10,8 +9,11 @@ import moze_intel.projecte.utils.MathUtils;
 import moze_intel.projecte.utils.PlayerHelper;
 import moze_intel.projecte.utils.ToolHelper;
 import moze_intel.projecte.utils.WorldHelper;
+import net.dice7000.proeritia.item.tool.PERKatar;
+import net.dice7000.proeritia.item.tool.PERSword;
+import net.dice7000.proeritia.item.tool.PERTools;
 import net.dice7000.proeritia.mixin.method.LivingEntityMixinMethod;
-import net.dice7000.proeritia.registry.ProEritiaMatterType;
+import net.dice7000.proeritia.registry.PERMatterType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
@@ -44,11 +46,11 @@ public class PERToolHelper extends ToolHelper {
     private static final Predicate<? super Entity> SLAY_ALL = (entity) -> !entity.isSpectator() && (entity instanceof Enemy || entity instanceof LivingEntity);
     private static final Predicate<? super Entity> SHEARABLE = (entity) -> !entity.isSpectator() && entity instanceof IForgeShearable;
 
-    public static float getDestroySpeed(float parentDestroySpeed, ProEritiaMatterType matterType, int charge) {
+    public static float getDestroySpeed(float parentDestroySpeed, PERMatterType matterType, int charge) {
         return parentDestroySpeed == 1.0F ? parentDestroySpeed : parentDestroySpeed + matterType.getChargeModifier() * (float)charge;
     }
 
-    public static boolean canMatterMine(ProEritiaMatterType matterType, Block block) {
+    public static boolean canMatterMine(PERMatterType matterType, Block block) {
         boolean var10000;
         if (block instanceof IMatterBlock matterBlock) {
             if (matterBlock.getMatterType().getMatterTier() <= matterType.getMatterTier()) {
@@ -72,7 +74,7 @@ public class PERToolHelper extends ToolHelper {
                     totalDmg = baseDmg + (float)charge;
                 } else {dmg = damager.damageSources().playerAttack(player);}
 
-                ProEritiaMatterType matterType = getProEritiaMatterType(item);
+                PERMatterType matterType = getProEritiaMatterType(item);
                 if (matterType == null) return;
 
                 damaged.hurt(player.damageSources().genericKill(), 0);
@@ -91,14 +93,14 @@ public class PERToolHelper extends ToolHelper {
 
     }
 
-    private static @Nullable ProEritiaMatterType getProEritiaMatterType(Item item) {
-        ProEritiaMatterType matterType = null;
+    private static @Nullable PERMatterType getProEritiaMatterType(Item item) {
+        PERMatterType matterType = null;
         if (item instanceof PERTools tools) {
-            ProEritiaMatterType handover = tools.getMatterType();
+            PERMatterType handover = tools.getMatterType();
             if (!(item instanceof PERKatar) && !(item instanceof PERSword)) {
-                if (handover == ProEritiaMatterType.INF | handover == ProEritiaMatterType.GCS) matterType = ProEritiaMatterType.IFP;
-            } else if (item instanceof PERSword && handover == ProEritiaMatterType.INF) {
-                matterType = ProEritiaMatterType.GCS;
+                if (handover == PERMatterType.INF | handover == PERMatterType.GCS) matterType = PERMatterType.IFP;
+            } else if (item instanceof PERSword && handover == PERMatterType.INF) {
+                matterType = PERMatterType.GCS;
             } else {
                 matterType = handover;
             }
@@ -120,7 +122,7 @@ public class PERToolHelper extends ToolHelper {
                 }
 
                 if (stack.getItem() instanceof PERKatar katar && entity instanceof LivingEntity target) {
-                    ProEritiaMatterType matterType = katar.getMatterType();
+                    PERMatterType matterType = katar.getMatterType();
                     switch (matterType) {
                         case KSE -> target.hurt(src, 2000000000);
                         case IFP -> target.setHealth(0);
