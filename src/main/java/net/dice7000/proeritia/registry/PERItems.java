@@ -14,7 +14,7 @@ import static net.dice7000.proeritia.registry.PERMatterType.IFP;
 import static net.dice7000.proeritia.registry.PERMatterType.GCS;
 import static net.dice7000.proeritia.registry.PERMatterType.INF;
 
-public class ProEritiaItems {
+public class PERItems {
     public static final DeferredRegister<Item> PROERITIA_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ProEritia.MOD_ID);
 
     public static final RegistryObject<Item> KLEINSTAR_EXTEND;

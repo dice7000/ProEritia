@@ -18,10 +18,10 @@ import java.util.Collections;
 import java.util.List;
 
 public enum PERMatterType implements StringRepresentable, Tier {
-    KSE("klein_star",                      8.0F,    18.0F,   20,     6,      8, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.COLOR_YELLOW    ),
-    IFP("inf_proest",                     30.0F,    30.0F,   50,    10,     30, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.COLOR_RED       ),
-    GCS("gravitional_collapsed_star",     60.0F,    50.0F,  100,    20,     60, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.COLOR_BLACK     ),
-    INF("infinite_star",              100000.0F, 50000.0F, 1000,   100, 100000, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.TERRACOTTA_WHITE);
+    KSE("klein_star",                      8.0F,    18.0F,      8,   20,   6, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.COLOR_YELLOW    ),
+    IFP("inf_proest",                     30.0F,    30.0F,     30,   50,  10, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.COLOR_RED       ),
+    GCS("gravitional_collapsed_star",     60.0F,    50.0F,     60,  100,  20, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.COLOR_BLACK     ),
+    INF("infinite_star",              100000.0F, 50000.0F, 100000, 1000, 100, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.TERRACOTTA_WHITE);
 
     private final String name;
     private final float attackDamage;

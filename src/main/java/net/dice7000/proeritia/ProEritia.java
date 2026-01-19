@@ -1,8 +1,8 @@
 package net.dice7000.proeritia;
 
 import net.dice7000.proeritia.registry.PEREMCHandler;
-import net.dice7000.proeritia.registry.ProEritiaCTab;
-import net.dice7000.proeritia.registry.ProEritiaItems;
+import net.dice7000.proeritia.registry.PERCTab;
+import net.dice7000.proeritia.registry.PERItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -21,7 +21,7 @@ public class ProEritia {
     public ProEritia(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
         modEventBus.addListener(this::commonSetup);
-        ProEritiaItems.register(modEventBus); ProEritiaCTab.register(modEventBus);
+        PERItems.register(modEventBus); PERCTab.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);}
 
