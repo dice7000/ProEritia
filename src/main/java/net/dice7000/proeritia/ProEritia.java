@@ -1,5 +1,6 @@
 package net.dice7000.proeritia;
 
+import net.dice7000.proeritia.registry.PEREMCHandler;
 import net.dice7000.proeritia.registry.ProEritiaCTab;
 import net.dice7000.proeritia.registry.ProEritiaItems;
 import net.minecraftforge.api.distmarker.Dist;
@@ -25,6 +26,7 @@ public class ProEritia {
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);}
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        PEREMCHandler.registerEMC();
     }
     @SubscribeEvent public void onServerStarting(ServerStartingEvent event) {
     }
