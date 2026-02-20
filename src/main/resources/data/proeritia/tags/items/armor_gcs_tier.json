@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "proeritia:gcs_helmet",
+    "proeritia:gcs_chest",
+    "proeritia:gcs_leggings",
+    "proeritia:gcs_boots",
+    "proeritia:inf_helmet",
+    "proeritia:inf_chest",
+    "proeritia:inf_leggings",
+    "proeritia:inf_boots"
+  ]
+}

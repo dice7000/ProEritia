@@ -2,7 +2,10 @@ package net.dice7000.proeritia.mixin.method;
 
 public interface LivingEntityMixinMethod {
     void proEritia$anotherSetHealth(float value);
-    void proEritia$setForceDeath(boolean forceDeath);
 
-    void proEritia$toggleEffectCancel();
+    boolean proEritia$shouldRunDieMethod();
+
+    void proEritia$setForceDeath(boolean forceDeath);
+    void proEritia$setImmuneDamage(boolean value);
+    void proEritia$setEffectCancel(boolean value);
 }

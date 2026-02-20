@@ -1,8 +1,13 @@
 package net.dice7000.proeritia;
 
-import net.dice7000.proeritia.registry.PEREMCHandler;
-import net.dice7000.proeritia.registry.PERCTab;
-import net.dice7000.proeritia.registry.PERItems;
+import net.dice7000.proeritia.client.screen.StorageScreen;
+import net.dice7000.proeritia.common.registry.PEREMCHandler;
+import net.dice7000.proeritia.common.registry.PERCTab;
+import net.dice7000.proeritia.common.registry.PERItems;
+import net.dice7000.proeritia.common.registry.PERMenu;
+import net.dice7000.proeritia.sync.PERNetwork;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -21,15 +26,24 @@ public class ProEritia {
     public ProEritia(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
         modEventBus.addListener(this::commonSetup);
-        PERItems.register(modEventBus); PERCTab.register(modEventBus);
+        PERItems.register(modEventBus); PERCTab.register(modEventBus); PERMenu.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);}
 
+    public static ResourceLocation PERLocation(String path) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+    }
+
     private void commonSetup(final FMLCommonSetupEvent event) {
+        PERNetwork.register();
         PEREMCHandler.registerEMC();
     }
     @SubscribeEvent public void onServerStarting(ServerStartingEvent event) {
     }
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents { @SubscribeEvent public static void onClientSetup(FMLClientSetupEvent event) {} }
+    public static class ClientModEvents {
+        @SubscribeEvent public static void onClientSetup(FMLClientSetupEvent event) {
+            MenuScreens.register(PERMenu.STORAGE_MENU.get(), StorageScreen::new);
+        }
+    }
 }
