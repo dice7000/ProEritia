@@ -96,7 +96,6 @@ public class PERToolHelper extends ToolHelper {
                 }
             }
         }
-
     }
 
     private static @Nullable PERMatterType getPERMatterType(Item item) {
@@ -138,8 +137,8 @@ public class PERToolHelper extends ToolHelper {
                             if (!(target instanceof Player)) ((LivingEntityMixinMethod) target).proEritia$setForceDeath(true);
                         }
                     }
-                    target.hurt(target.damageSources().genericKill(), 0);
-                    if (((LivingEntityMixinMethod) target).proEritia$shouldRunDieMethod()) target.die(target.damageSources().genericKill());
+                    target.hurt(src, 0);
+                    if (((LivingEntityMixinMethod) target).proEritia$shouldRunDieMethod()) target.die(src);
                 }
 
                 hasAction = true;
