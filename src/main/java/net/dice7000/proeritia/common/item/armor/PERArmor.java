@@ -48,7 +48,7 @@ public class PERArmor extends PEArmor {
         if (!pPlayer.isShiftKeyDown()) return super.use(pLevel, pPlayer, pHand);
         if (!pLevel.isClientSide) {
             ItemStack stack = pPlayer.getItemInHand(pHand); NetworkHooks.openScreen((ServerPlayer) pPlayer, new SimpleMenuProvider(
-                            (id, inv, p) -> new PERArmorStorageMenu(id, inv, stack), Component.literal("Storage")
+                            (id, inv, p) -> new PERArmorStorageMenu(id, inv, stack), Component.literal("PER Armor (WIP)")
                     ), buf -> buf.writeBoolean(pHand == InteractionHand.MAIN_HAND)
             );
         }

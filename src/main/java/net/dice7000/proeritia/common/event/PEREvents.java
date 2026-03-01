@@ -41,12 +41,14 @@ public class PEREvents {
                 ((LivingEntityMixinMethod) player).proEritia$setEffectCancel(false);
             }
             if (typeAsInt >= 4) {
+                //((LivingEntityMixinMethod) player).proEritia$setNotPickable(true);
             } else {
+                //((LivingEntityMixinMethod) player).proEritia$setNotPickable(false);
             }
         }
 
         private static int isAllWearing(Player player) {
-                if (matchTags(player, ARMOR_INF_TIER)) {
+                       if (matchTags(player, ARMOR_INF_TIER)) {
                     return 4;
                 } else if (matchTags(player, ARMOR_GCS_TIER)) {
                     return 3;
@@ -54,7 +56,8 @@ public class PEREvents {
                     return 2;
                 } else if (matchTags(player, ARMOR_KSE_TIER)) {
                     return 1;
-                } else return 0;
+                } else
+                    return 0;
         }
         private static boolean matchTags(Player player, TagKey<Item> tag) {
             ItemStack h = player.getItemBySlot(HEAD);

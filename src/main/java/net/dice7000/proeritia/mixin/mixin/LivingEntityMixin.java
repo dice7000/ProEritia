@@ -65,11 +65,15 @@ public abstract class LivingEntityMixin implements LivingEntityMixinMethod {
 
     @Unique private boolean proEritia$isImmuneDamage = false;
     @Unique private boolean proEritia$isEffectCancel = false;
+    @Unique private boolean proEritia$isNotPickable = false;
     @Override public void proEritia$setImmuneDamage(boolean value) {
         proEritia$isImmuneDamage = value;
     }
     @Override public void proEritia$setEffectCancel(boolean value) {
         proEritia$isEffectCancel = value;
+    }
+    @Override public void proEritia$setNotPickable(boolean value) {
+        proEritia$isNotPickable = value;
     }
 
     @Inject(method = "hurt", at = @At("HEAD"), cancellable = true)
@@ -84,6 +88,11 @@ public abstract class LivingEntityMixin implements LivingEntityMixinMethod {
     }
     @Inject(method = "addEffect(Lnet/minecraft/world/effect/MobEffectInstance;Lnet/minecraft/world/entity/Entity;)Z", at = @At("HEAD"), cancellable = true)
     public void addEffectInject(MobEffectInstance pEffectInstance, Entity pEntity, CallbackInfoReturnable<Boolean> cir) {
-        if (proEritia$isEffectCancel) cir.cancel();
+        if (proEritia$isEffectCancel) cir.setReturnValue(false);
+    }
+
+    @Inject(method = "isPickable", at = @At("HEAD"), cancellable = true)
+    public void isPickableInject(CallbackInfoReturnable<Boolean> cir) {
+        if (proEritia$isNotPickable) cir.setReturnValue(false);
     }
 }

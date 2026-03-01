@@ -161,6 +161,7 @@ dependencies {
     implementation fg.deobf("curse.maven:Jade-324717:6855440")
     implementation fg.deobf("curse.maven:ModularRouter-250294:5056687")
     //implementation fg.deobf("curse.maven:EB-1455452:7607107")
+    implementation fg.deobf("curse.maven:TrialMonolith-1462850:7677181")
 
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }
