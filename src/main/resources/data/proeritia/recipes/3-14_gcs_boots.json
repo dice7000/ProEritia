@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:ultracompressed_inf_proest"
+    },
+    "E": {
+      "item": "proeritia:ultracompressed_inf_binary_proest"
+    },
+    "G": {
+      "item": "proeritia:gravitational_collapsed_star"
+    },
+
+    "B": {
+      "item": "proeritia:ifp_boots"
+    }
+  },
+  "pattern": [
+    " KKK KKK ",
+    " KEK KEK ",
+    " KEK KEK ",
+    "KKEKBKEKK",
+    "KGEK KEGK",
+    "KKKK KKKK"
+  ],
+  "result": {
+    "item": "proeritia:gcs_boots"
+  },
+  "show_notification": true,
+  "tier": 4
+}

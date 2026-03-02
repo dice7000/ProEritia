@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "proeritia:infinite_star"
+    },
+    "K": {
+      "item": "proeritia:klein_star_claster"
+    },
+
+    "H": {
+      "item": "proeritia:gcs_helmet"
+    }
+  },
+  "pattern": [
+    "  KKKKK  ",
+    " KIIIIIK ",
+    "KIIIIIIIK",
+    "KIKIHIKIK",
+    "KIIIIIIIK",
+    "KIIKKKIIK",
+    "KIK   KIK",
+    "KIK   KIK",
+    "KKK   KKK"
+  ],
+  "result": {
+    "item": "proeritia:inf_helmet"
+  },
+  "show_notification": true,
+  "tier": 4
+}

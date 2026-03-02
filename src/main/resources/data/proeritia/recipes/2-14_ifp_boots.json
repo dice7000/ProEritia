@@ -1,0 +1,29 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:inf_proest"
+    },
+    "E": {
+      "item": "proeritia:inf_binary_proest"
+    },
+
+    "B": {
+      "item": "proeritia:kse_boots"
+    }
+  },
+  "pattern": [
+    " KKK KKK ",
+    " KEK KEK ",
+    " KEK KEK ",
+    "KKEKBKEKK",
+    "KEEK KEEK",
+    "KKKK KKKK"
+  ],
+  "result": {
+    "item": "proeritia:ifp_boots"
+  },
+  "show_notification": true,
+  "tier": 4
+}

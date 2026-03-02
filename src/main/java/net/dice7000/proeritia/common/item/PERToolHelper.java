@@ -15,9 +15,7 @@ import net.dice7000.proeritia.common.item.tool.PERTools;
 import net.dice7000.proeritia.mixin.method.LivingEntityMixinMethod;
 import net.dice7000.proeritia.common.registry.PERMatterType;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -35,7 +33,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.IForgeShearable;
-import net.minecraftforge.entity.PartEntity;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -52,15 +49,10 @@ public class PERToolHelper extends ToolHelper {
     }
 
     public static boolean canMatterMine(PERMatterType matterType, Block block) {
-        boolean var10000;
         if (block instanceof IMatterBlock matterBlock) {
-            if (matterBlock.getMatterType().getMatterTier() <= matterType.getMatterTier()) {
-                var10000 = true;
-                return var10000;
-            }
+            return matterBlock.getMatterType().getMatterTier() <= matterType.getMatterTier();
         }
-        var10000 = false;
-        return var10000;
+        return false;
     }
 
     public static void attackWithChargeOnPER(ItemStack stack, LivingEntity target, LivingEntity damager, float baseDmg) {
@@ -117,7 +109,7 @@ public class PERToolHelper extends ToolHelper {
         Level level = player.level();
         if (!level.isClientSide) {
             int charge = getPERCharge(stack);
-            List<Entity> toAttack = level.getEntities(player, player.getBoundingBox().inflate((double)(2.5F * (float)charge)), slayAll ? SLAY_ALL : SLAY_MOB);
+            List<Entity> toAttack = level.getEntities(player, player.getBoundingBox().inflate((2.5F * (float)charge)), slayAll ? SLAY_ALL : SLAY_MOB);
             DamageSource src = PEDamageTypes.BYPASS_ARMOR_PLAYER_ATTACK.source(player);
             boolean hasAction = false;
 
@@ -145,7 +137,7 @@ public class PERToolHelper extends ToolHelper {
             }
 
             if (hasAction) {
-                level.playSound((Player) null, player.getX(), player.getY(), player.getZ(), (SoundEvent) PESoundEvents.CHARGE.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+                level.playSound(null, player.getX(), player.getY(), player.getZ(), PESoundEvents.CHARGE.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
                 PlayerHelper.swingItem(player, hand);
             }
 
@@ -153,17 +145,17 @@ public class PERToolHelper extends ToolHelper {
     }
 
     private static int getPERCharge(ItemStack stack) {
-        return (Integer) stack.getCapability(PECapabilities.CHARGE_ITEM_CAPABILITY).map((itemCharge) -> itemCharge.getCharge(stack)).orElse(0);
+        return stack.getCapability(PECapabilities.CHARGE_ITEM_CAPABILITY).map((itemCharge) -> itemCharge.getCharge(stack)).orElse(0);
     }
 
     public static InteractionResult shearEntityAOEonPER(Player player, InteractionHand hand, long emcCost) {
         Level level = player.level();
         ItemStack stack = player.getItemInHand(hand);
         int fortune = stack.getEnchantmentLevel(Enchantments.BLOCK_FORTUNE);
-        int offset = Mth.clamp((int) Math.pow((double) 2.0F, (double) (2 + getPERCharge(stack))), 0, 10000);
-        List<Entity> list = level.getEntitiesOfClass(Entity.class, player.getBoundingBox().inflate((double) offset, (double)offset / (double)2.0F, (double) offset), SHEARABLE);
+        int offset = Mth.clamp((int) Math.pow(2.0F, (2 + getPERCharge(stack))), 0, 10000);
+        List<Entity> list = level.getEntitiesOfClass(Entity.class, player.getBoundingBox().inflate(offset, offset / 2.0F, offset), SHEARABLE);
         boolean hasAction = false;
-        List<ItemStack> drops = new ArrayList();
+        List<ItemStack> drops = new ArrayList<>();
 
         for(Entity ent : list) {
             BlockPos entityPosition = ent.blockPosition();
@@ -191,18 +183,15 @@ public class PERToolHelper extends ToolHelper {
                 Entity e = ent.getType().create(level);
                 if (e != null) {
                     e.setPos(ent.getX(), ent.getY(), ent.getZ());
-                    if (e instanceof Mob) {
-                        Mob mob = (Mob)e;
-                        mob.finalizeSpawn((ServerLevel)level, level.getCurrentDifficultyAt(entityPosition), MobSpawnType.EVENT, (SpawnGroupData)null, (CompoundTag)null);
+                    if (e instanceof Mob mob) {
+                        mob.finalizeSpawn((ServerLevel)level, level.getCurrentDifficultyAt(entityPosition), MobSpawnType.EVENT, null, null);
                     }
 
-                    if (e instanceof Sheep) {
-                        Sheep sheep = (Sheep)e;
+                    if (e instanceof Sheep sheep) {
                         sheep.setColor(DyeColor.byId(MathUtils.randomIntInRange(0, 15)));
                     }
 
-                    if (e instanceof AgeableMob) {
-                        AgeableMob mob = (AgeableMob)e;
+                    if (e instanceof AgeableMob mob) {
                         mob.setAge(-24000);
                     }
 

@@ -1,0 +1,35 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:ultracompressed_inf_proest"
+    },
+    "E": {
+      "item": "proeritia:ultracompressed_inf_binary_proest"
+    },
+    "G": {
+      "item": "proeritia:gravitational_collapsed_star"
+    },
+
+    "C": {
+      "item": "proeritia:ifp_chest"
+    }
+  },
+  "pattern": [
+    " KK   KK ",
+    "KKK   KKK",
+    "KKK   KKK",
+    " KEEEEEK ",
+    " KEECEEK ",
+    " KEEGEEK ",
+    " KEEEEEK ",
+    " KEEEEEK ",
+    "  KKKKK  "
+  ],
+  "result": {
+    "item": "proeritia:gcs_chest"
+  },
+  "show_notification": true,
+  "tier": 4
+}

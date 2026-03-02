@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:klein_star_extend"
+    },
+    "E": {
+      "item": "proeritia:klein_binary_star_extend"
+    },
+
+    "C": {
+      "item": "projecte:rm_chestplate"
+    }
+  },
+  "pattern": [
+    " KK   KK ",
+    "KKK   KKK",
+    "KKK   KKK",
+    " KEEEEEK ",
+    " KEECEEK ",
+    " KEEEEEK ",
+    " KEEEEEK ",
+    " KEEEEEK ",
+    "  KKKKK  "
+  ],
+  "result": {
+    "item": "proeritia:kse_chest"
+  },
+  "show_notification": true,
+  "tier": 4
+}

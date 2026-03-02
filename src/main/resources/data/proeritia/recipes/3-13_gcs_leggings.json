@@ -1,0 +1,35 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:ultracompressed_inf_proest"
+    },
+    "E": {
+      "item": "proeritia:ultracompressed_inf_binary_proest"
+    },
+    "G": {
+      "item": "proeritia:gravitational_collapsed_star"
+    },
+
+    "L": {
+      "item": "proeritia:ifp_leggings"
+    }
+  },
+  "pattern": [
+    "KKKKKKKKK",
+    "KEEELEEEK",
+    "KEKKKKKEK",
+    "KEK   KEK",
+    "KGK   KGK",
+    "KEK   KEK",
+    "KEK   KEK",
+    "KEK   KEK",
+    "KKK   KKK"
+  ],
+  "result": {
+    "item": "proeritia:gcs_leggings"
+  },
+  "show_notification": true,
+  "tier": 4
+}

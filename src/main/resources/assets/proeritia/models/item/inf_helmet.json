@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "proeritia:item/inf_tools/41helmet"
+    "layer0": "proeritia:item/inf_tools/11helmet"
   }
 }

@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "proeritia:infinite_star"
+    },
+    "K": {
+      "item": "proeritia:klein_star_claster"
+    },
+
+    "C": {
+      "item": "proeritia:gcs_chest"
+    }
+  },
+  "pattern": [
+    "KKK   KKK",
+    "KIK   KIK",
+    "KIKKKKKIK",
+    "KKIIIIIKK",
+    " KIIIIIK ",
+    " KIICIIK ",
+    " KIIIIIK ",
+    " KIIIIIK ",
+    "  KKKKK  "
+  ],
+  "result": {
+    "item": "proeritia:inf_chest"
+  },
+  "show_notification": true,
+  "tier": 4
+}

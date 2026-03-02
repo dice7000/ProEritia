@@ -23,16 +23,19 @@
     },
     "K": {
       "item": "proeritia:gcs_katar"
+    },
+    "M": {
+      "item": "proeritia:inf_morning_star"
     }
   },
   "pattern": [
-    "     II  ",
-    "    ISII ",
-    "   IEIAI ",
-    "  IIIHI  ",
-    " CIKIII  ",
-    "C CIII   ",
-    "CC CI    ",
+    "     III ",
+    "    ISIII",
+    "   IEIIAI",
+    "  IIIIHI ",
+    " CIKIIII ",
+    "C CIMII  ",
+    "CC CII   ",
     " CC C    ",
     "  CC     "
   ],

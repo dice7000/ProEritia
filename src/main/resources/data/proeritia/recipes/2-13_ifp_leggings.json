@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:inf_proest"
+    },
+    "E": {
+      "item": "proeritia:inf_binary_proest"
+    },
+
+    "L": {
+      "item": "proeritia:kse_leggings"
+    }
+  },
+  "pattern": [
+    "KKKKKKKKK",
+    "KEEELEEEK",
+    "KEKKKKKEK",
+    "KEK   KEK",
+    "KEK   KEK",
+    "KEK   KEK",
+    "KEK   KEK",
+    "KEK   KEK",
+    "KKK   KKK"
+  ],
+  "result": {
+    "item": "proeritia:ifp_leggings"
+  },
+  "show_notification": true,
+  "tier": 4
+}

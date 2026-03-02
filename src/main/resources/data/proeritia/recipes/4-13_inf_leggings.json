@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "proeritia:infinite_star"
+    },
+    "K": {
+      "item": "proeritia:klein_star_claster"
+    },
+
+    "L": {
+      "item": "proeritia:gcs_leggings"
+    }
+  },
+  "pattern": [
+    "KKKKKKKKK",
+    "KIIIIIIIK",
+    "KIIILIIIK",
+    "KIIKKKIIK",
+    "KIIK KIIK",
+    "KIIK KIIK",
+    "KIIK KIIK",
+    "KIIK KIIK",
+    "KKKK KKKK"
+  ],
+  "result": {
+    "item": "proeritia:inf_leggings"
+  },
+  "show_notification": true,
+  "tier": 4
+}

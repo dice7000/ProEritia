@@ -1,0 +1,29 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "proeritia:inf_proest"
+    },
+    "E": {
+      "item": "proeritia:inf_binary_proest"
+    },
+
+    "H": {
+      "item": "proeritia:kse_helmet"
+    }
+  },
+  "pattern": [
+    " KKKKK ",
+    "KEEEEEK",
+    "K KHK K",
+    "KEEEEEK",
+    "KEEEEEK",
+    "KE E EK"
+  ],
+  "result": {
+    "item": "proeritia:ifp_helmet"
+  },
+  "show_notification": true,
+  "tier": 4
+}

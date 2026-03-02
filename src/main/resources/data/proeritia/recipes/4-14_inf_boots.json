@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "proeritia:infinite_star"
+    },
+    "K": {
+      "item": "proeritia:klein_star_claster"
+    },
+
+    "B": {
+      "item": "proeritia:gcs_boots"
+    }
+  },
+  "pattern": [
+    " KKK KKK ",
+    " KIK KIK ",
+    " KIK KIK ",
+    " KIK KIK ",
+    " KIK KIK ",
+    "KKIK KIKK",
+    "KIIKBKIIK",
+    "KIIK KIIK",
+    "KKKK KKKK"
+  ],
+  "result": {
+    "item": "proeritia:inf_boots"
+  },
+  "show_notification": true,
+  "tier": 4
+}
