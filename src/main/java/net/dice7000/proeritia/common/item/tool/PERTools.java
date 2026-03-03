@@ -12,7 +12,7 @@ public interface PERTools {
         int numCharges = matterType.getChargeModifier();
         int limitedCharges;
         if (getServerFriendlyMode()) {
-            limitedCharges = getChargeLimit();
+            limitedCharges = Math.min(getChargeLimit(), numCharges);
         } else {
             limitedCharges = numCharges;
         }
