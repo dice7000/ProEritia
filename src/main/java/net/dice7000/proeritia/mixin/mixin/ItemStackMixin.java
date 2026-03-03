@@ -41,48 +41,44 @@ public abstract class ItemStackMixin {
 
     @Inject(method = "is(Lnet/minecraft/world/item/Item;)Z", at = @At("HEAD"), cancellable = true)
     public void passItemIsInject(Item pItem, CallbackInfoReturnable<Boolean> cir) {
-        if (proEritia$initialized) {
-            if (proEritia$targetClass.getItem() instanceof PERArmor armor && armor.getMatterType() == PERMatterType.INF) {
-                for (int i = 0; i < 3; i++) {
-                    if (pItem == PERUtil.getSlot(proEritia$targetClass, i).getItem()) {
-                        cir.setReturnValue(true);
-                    }
+        if (!proEritia$initialized) cir.setReturnValue(cir.getReturnValue());
+        if (proEritia$targetClass.getItem() instanceof PERArmor armor && armor.getMatterType() == PERMatterType.INF) {
+            for (int i = 0; i < 3; i++) {
+                if (pItem == PERUtil.getSlot(proEritia$targetClass, i).getItem()) {
+                    cir.setReturnValue(true);
                 }
             }
         }
     }
     @Inject(method = "is(Lnet/minecraft/tags/TagKey;)Z", at = @At("HEAD"), cancellable = true)
     public void passTagKeyIsInject(TagKey<Item> pTag, CallbackInfoReturnable<Boolean> cir) {
-        if (proEritia$initialized) {
-            if (proEritia$targetClass.getItem() instanceof PERArmor armor && armor.getMatterType() == PERMatterType.INF) {
-                for (int i = 0; i < 3; i++) {
-                    if (PERUtil.getSlot(proEritia$targetClass, i).getItem().builtInRegistryHolder().is(pTag)) {
-                        cir.setReturnValue(true);
-                    }
+        if (!proEritia$initialized) cir.setReturnValue(cir.getReturnValue());
+        if (proEritia$targetClass.getItem() instanceof PERArmor armor && armor.getMatterType() == PERMatterType.INF) {
+            for (int i = 0; i < 3; i++) {
+                if (PERUtil.getSlot(proEritia$targetClass, i).getItem().builtInRegistryHolder().is(pTag)) {
+                    cir.setReturnValue(true);
                 }
             }
         }
     }
     @Inject(method = "is(Ljava/util/function/Predicate;)Z", at = @At("HEAD"), cancellable = true)
     public void passPredicateIsInject(Predicate<Holder<Item>> pItem, CallbackInfoReturnable<Boolean> cir) {
-        if (proEritia$initialized) {
-            if (proEritia$targetClass.getItem() instanceof PERArmor armor && armor.getMatterType() == PERMatterType.INF) {
-                for (int i = 0; i < 3; i++) {
-                    if (pItem.test(PERUtil.getSlot(proEritia$targetClass, i).getItem().builtInRegistryHolder())) {
-                        cir.setReturnValue(true);
-                    }
+        if (!proEritia$initialized) cir.setReturnValue(cir.getReturnValue());
+        if (proEritia$targetClass.getItem() instanceof PERArmor armor && armor.getMatterType() == PERMatterType.INF) {
+            for (int i = 0; i < 3; i++) {
+                if (pItem.test(PERUtil.getSlot(proEritia$targetClass, i).getItem().builtInRegistryHolder())) {
+                    cir.setReturnValue(true);
                 }
             }
         }
     }
     @Inject(method = "is(Lnet/minecraft/core/Holder;)Z", at = @At("HEAD"), cancellable = true)
     public void passHolderIsInject(Holder<Item> pItem, CallbackInfoReturnable<Boolean> cir) {
-        if (proEritia$initialized) {
-            if (proEritia$targetClass.getItem() instanceof PERArmor armor && armor.getMatterType() == PERMatterType.INF) {
-                for (int i = 0; i < 3; i++) {
-                    if (pItem == PERUtil.getSlot(proEritia$targetClass, i).getItem().builtInRegistryHolder()) {
-                        cir.setReturnValue(true);
-                    }
+        if (!proEritia$initialized) cir.setReturnValue(cir.getReturnValue());
+        if (proEritia$targetClass.getItem() instanceof PERArmor armor && armor.getMatterType() == PERMatterType.INF) {
+            for (int i = 0; i < 3; i++) {
+                if (pItem == PERUtil.getSlot(proEritia$targetClass, i).getItem().builtInRegistryHolder()) {
+                    cir.setReturnValue(true);
                 }
             }
         }
