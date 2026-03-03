@@ -39,7 +39,7 @@ public class PERConfig {
             builder.push("Server Friendly Mode");
             SERVER_FRIENDLY_MODE = builder
                     .comment("Set Server Friendly Mode. Default: false")
-                    .define("ServerFriendlyMode", true);
+                    .define("ServerFriendlyMode", false);
             CHARGE_LIMIT = builder
                     .comment("Set PER Tools charge limit. Default: 3")
                     .defineInRange("ChargeLimit", 3, 1,1000);
