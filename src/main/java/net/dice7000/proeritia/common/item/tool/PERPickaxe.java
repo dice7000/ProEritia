@@ -6,6 +6,7 @@ import moze_intel.projecte.utils.text.ILangEntry;
 import moze_intel.projecte.utils.text.PELang;
 import net.dice7000.proeritia.common.item.PERToolHelper;
 import net.dice7000.proeritia.common.registry.PERMatterType;
+import net.dice7000.proeritia.util.PERUtil;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -17,9 +18,14 @@ public class PERPickaxe extends PEPickaxe implements PERTools {
     private final ILangEntry[] modeDesc;
 
     public PERPickaxe(PERMatterType matterType) {
-        super(EnumMatterType.RED_MATTER, matterType.getChargeModifier(), new Item.Properties());
+        super(EnumMatterType.RED_MATTER, 1, new Item.Properties());
         this.matterType = matterType;
         this.modeDesc = new ILangEntry[]{PELang.MODE_PICK_1, PELang.MODE_PICK_2, PELang.MODE_PICK_3, PELang.MODE_PICK_4};
+    }
+
+    @Override
+    public int getNumCharges(@NotNull ItemStack stack) {
+        return getNumChargesLimited(matterType);
     }
 
     public PERMatterType getMatterType() {

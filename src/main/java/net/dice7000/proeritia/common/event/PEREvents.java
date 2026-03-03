@@ -21,7 +21,6 @@ public class PEREvents {
     }
     @Mod.EventBusSubscriber(modid = ProEritia.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
     public static class ForgeBusEvent {
-
         @SubscribeEvent public static void onAllWearing(TickEvent.PlayerTickEvent event) {
             if (event.phase != TickEvent.Phase.END) return;
             Player player = event.player;

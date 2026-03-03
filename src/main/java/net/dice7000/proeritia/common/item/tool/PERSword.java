@@ -5,6 +5,7 @@ import moze_intel.projecte.gameObjs.PETags;
 import moze_intel.projecte.gameObjs.items.tools.PESword;
 import net.dice7000.proeritia.common.item.PERToolHelper;
 import net.dice7000.proeritia.common.registry.PERMatterType;
+import net.dice7000.proeritia.util.PERUtil;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -13,12 +14,10 @@ import org.jetbrains.annotations.NotNull;
 
 public class PERSword extends PESword implements PERTools {
     private final PERMatterType matterType;
-    private final int numCharges;
 
     public PERSword(PERMatterType matterType) {
-        super(EnumMatterType.RED_MATTER, matterType.getChargeModifier(), matterType.getDamageOnregistry(), new Item.Properties());
+        super(EnumMatterType.RED_MATTER, 1, matterType.getDamageOnregistry(), new Item.Properties());
         this.matterType = matterType;
-        this.numCharges = matterType.getChargeModifier();
     }
 
     public PERMatterType getMatterType() {
@@ -35,7 +34,7 @@ public class PERSword extends PESword implements PERTools {
     }
 
     public int getNumCharges(@NotNull ItemStack stack) {
-        return numCharges;
+        return getNumChargesLimited(matterType);
     }
 
     @Override

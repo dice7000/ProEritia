@@ -28,7 +28,8 @@ public class ProEritia {
         modEventBus.addListener(this::commonSetup);
         PERItems.register(modEventBus); PERCTab.register(modEventBus); PERMenu.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
-        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);}
+        context.registerConfig(ModConfig.Type.COMMON, PERConfig.SPEC);
+    }
 
     public static ResourceLocation PERLocation(String path) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);

@@ -4,6 +4,7 @@ import moze_intel.projecte.gameObjs.EnumMatterType;
 import moze_intel.projecte.gameObjs.items.tools.PEHammer;
 import net.dice7000.proeritia.common.item.PERToolHelper;
 import net.dice7000.proeritia.common.registry.PERMatterType;
+import net.dice7000.proeritia.util.PERUtil;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -12,10 +13,13 @@ import org.jetbrains.annotations.NotNull;
 
 public class PERHammer extends PEHammer implements PERTools {
     private final PERMatterType matterType;
-
     public PERHammer(PERMatterType matterType) {
-        super(EnumMatterType.RED_MATTER, matterType.getChargeModifier(), new Item.Properties());
+        super(EnumMatterType.RED_MATTER, 1, new Item.Properties());
         this.matterType = matterType;
+    }
+
+    @Override public int getNumCharges(@NotNull ItemStack stack) {
+        return getNumChargesLimited(matterType);
     }
 
     public PERMatterType getMatterType() {

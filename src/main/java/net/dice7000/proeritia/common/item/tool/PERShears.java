@@ -6,6 +6,7 @@ import moze_intel.projecte.gameObjs.items.tools.PEShears;
 import moze_intel.projecte.utils.ItemHelper;
 import net.dice7000.proeritia.common.item.PERToolHelper;
 import net.dice7000.proeritia.common.registry.PERMatterType;
+import net.dice7000.proeritia.util.PERUtil;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -18,12 +19,10 @@ import org.jetbrains.annotations.NotNull;
 
 public class PERShears extends PEShears implements PERTools {
     private final PERMatterType matterType;
-    private final int numCharges;
 
     public PERShears(PERMatterType matterType) {
-        super(EnumMatterType.RED_MATTER, matterType.getChargeModifier(), new Item.Properties());
+        super(EnumMatterType.RED_MATTER, 1, new Item.Properties());
         this.matterType = matterType;
-        this.numCharges = matterType.getChargeModifier();
     }
 
     public PERMatterType getMatterType() {
@@ -32,7 +31,7 @@ public class PERShears extends PEShears implements PERTools {
 
     @Override
     public int getNumCharges(@NotNull ItemStack stack) {
-        return numCharges;
+        return getNumChargesLimited(matterType);
     }
 
     @Override

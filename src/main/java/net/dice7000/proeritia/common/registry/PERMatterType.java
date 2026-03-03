@@ -58,7 +58,7 @@ public enum PERMatterType implements StringRepresentable, Tier {
         return 0;
     }
     public int getChargeModifier() {
-        return this.chargeModifier;
+        return chargeModifier;
     }
     public float getSpeed() {
         return this.efficiency;

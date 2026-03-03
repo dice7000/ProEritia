@@ -4,6 +4,7 @@ import moze_intel.projecte.gameObjs.EnumMatterType;
 import moze_intel.projecte.gameObjs.items.tools.PEHoe;
 import net.dice7000.proeritia.common.item.PERToolHelper;
 import net.dice7000.proeritia.common.registry.PERMatterType;
+import net.dice7000.proeritia.util.PERUtil;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -12,12 +13,15 @@ import org.jetbrains.annotations.NotNull;
 
 public class PERHoe extends PEHoe implements PERTools {
     private final PERMatterType matterType;
-    private final int numCharges;
 
     public PERHoe(PERMatterType matterType) {
-        super(EnumMatterType.RED_MATTER, matterType.getChargeModifier(), new Item.Properties());
+        super(EnumMatterType.RED_MATTER, 1, new Item.Properties());
         this.matterType = matterType;
-        this.numCharges = matterType.getChargeModifier();
+    }
+
+    @Override
+    public int getNumCharges(@NotNull ItemStack stack) {
+        return getNumChargesLimited(matterType);
     }
 
     public PERMatterType getMatterType() {
@@ -33,8 +37,5 @@ public class PERHoe extends PEHoe implements PERTools {
     public boolean hurtEnemy(@NotNull ItemStack stack, @NotNull LivingEntity damaged, @NotNull LivingEntity damager) {
         PERToolHelper.attackWithChargeOnPER(stack, damaged, damager, 1.0F);
         return true;
-    }
-    public int getNumCharges() {
-        return numCharges;
     }
 }

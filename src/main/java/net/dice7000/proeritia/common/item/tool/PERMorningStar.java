@@ -7,6 +7,7 @@ import moze_intel.projecte.utils.text.ILangEntry;
 import moze_intel.projecte.utils.text.PELang;
 import net.dice7000.proeritia.common.item.PERToolHelper;
 import net.dice7000.proeritia.common.registry.PERMatterType;
+import net.dice7000.proeritia.util.PERUtil;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -18,11 +19,15 @@ public class PERMorningStar extends PEMorningStar implements PERTools {
     private final ILangEntry[] modeDesc;
 
     public PERMorningStar(PERMatterType matterType) {
-        super(EnumMatterType.RED_MATTER, matterType.getChargeModifier(), new Item.Properties());
+        super(EnumMatterType.RED_MATTER, 1, new Item.Properties());
         this.matterType = matterType;
         this.modeDesc = new ILangEntry[]{PELang.MODE_MORNING_STAR_1, PELang.MODE_MORNING_STAR_2, PELang.MODE_MORNING_STAR_3, PELang.MODE_MORNING_STAR_4};
         this.addItemCapability(ModeChangerItemCapabilityWrapper::new);
+    }
 
+    @Override
+    public int getNumCharges(@NotNull ItemStack stack) {
+        return getNumChargesLimited(matterType);
     }
 
     public PERMatterType getMatterType() {

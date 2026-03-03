@@ -143,7 +143,6 @@ public class PERToolHelper extends ToolHelper {
 
         }
     }
-
     private static int getPERCharge(ItemStack stack) {
         return stack.getCapability(PECapabilities.CHARGE_ITEM_CAPABILITY).map((itemCharge) -> itemCharge.getCharge(stack)).orElse(0);
     }
