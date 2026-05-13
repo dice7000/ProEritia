@@ -14,7 +14,7 @@ base {
     archivesName = mod_id
 }
 
-mixin{
+mixin {
     config 'proeritia.mixins.json'
 }
 
@@ -59,7 +59,7 @@ minecraft {
     // However, it must be at "META-INF/accesstransformer.cfg" in the final mod jar to be loaded by Forge.
     // This default location is a best practice to automatically put the file in the right place in the final jar.
     // See https://docs.minecraftforge.net/en/latest/advanced/accesstransformers/ for more information.
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    accessTransformer = 'src/main/resources/META-INF/accesstransformer.cfg'
 
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
@@ -163,6 +163,16 @@ dependencies {
     //implementation fg.deobf("curse.maven:EB-1455452:7607107")
     implementation fg.deobf("curse.maven:TrialMonolith-1462850:7677181")
     implementation fg.deobf("curse.maven:Create-328085:7178761")
+    implementation fg.deobf("curse.maven:Curios-309927:6418456")
+    implementation fg.deobf("curse.maven:NoSugar-1476611:8000478")
+
+    implementation fg.deobf("curse.maven:mantle-74924:7563777")
+    implementation fg.deobf("curse.maven:TiC-74072:7449219")
+
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.4"))
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.4")) {
+        jarJar.ranged(it, "[0.5.4,)")
+    }
 
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }

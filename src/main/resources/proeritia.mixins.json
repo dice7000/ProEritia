@@ -3,9 +3,11 @@
   "package": "net.dice7000.proeritia.mixin.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "AvaritiaToolUtilsMixin",
     "EntityMixin",
     "ItemStackMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "SEDMixin",
+    "SEDMixin$DataItemMixin",
+    "SEDMixin$LivingEntityAccessor"
   ]
 }

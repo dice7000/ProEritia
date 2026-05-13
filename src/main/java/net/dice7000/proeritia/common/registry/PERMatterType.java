@@ -18,15 +18,15 @@ import java.util.Collections;
 import java.util.List;
 
 public enum PERMatterType implements StringRepresentable, Tier {
-    KSE("klein_star",                      8.0F,    18.0F,   20,   6,     100, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.COLOR_YELLOW    ),
-    IFP("inf_proest",                     30.0F,    30.0F,   50,  10,    5000, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.COLOR_RED       ),
-    GCS("gravitional_collapsed_star",     60.0F,    60.0F,  100,  20,   10000, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.COLOR_BLACK     ),
-    INF("infinite_star",              100000.0F, 60000.0F, 1000, 100, 1000000, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.TERRACOTTA_WHITE);
+    KSE("kse",      8.0F,    18.0F,   20,   6,     100, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.COLOR_YELLOW    ),
+    IFP("ifp",     30.0F,    30.0F,   50,  10,    5000, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.COLOR_RED       ),
+    GCS("gcs",     60.0F,    60.0F,  100,  20,   10000, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.COLOR_BLACK     ),
+    INF("inf", 100000.0F, 60000.0F, 1000, 100, 1000000, PETags.Blocks.NEEDS_RED_MATTER_TOOL, Tiers.NETHERITE, null, MapColor.TERRACOTTA_WHITE);
 
     private final String name;
     private final float attackDamage;
     private final float efficiency;
-    private final int damageOnregistry;
+    private final int damageOnRegistry;
     private final int chargeModifier;
     private final int harvestLevel;
     private final int damageCoefficient;
@@ -39,7 +39,7 @@ public enum PERMatterType implements StringRepresentable, Tier {
         this.name = name;
         this.attackDamage = attackDamage;
         this.efficiency = efficiency;
-        this.damageOnregistry = (int) attackDamage;
+        this.damageOnRegistry = (int) attackDamage;
         this.chargeModifier = chargeModifier;
         this.harvestLevel = harvestLevel;
         this.damageCoefficient = damageCoefficient;
@@ -87,7 +87,7 @@ public enum PERMatterType implements StringRepresentable, Tier {
     public @NotNull TagKey<Block> getTag() {
         return this.neededTag;
     }
-    public int getDamageOnregistry() {
-        return damageOnregistry;
+    public int getDamageOnRegistry() {
+        return damageOnRegistry;
     }
 }

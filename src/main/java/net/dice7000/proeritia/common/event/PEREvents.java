@@ -11,6 +11,11 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import static net.dice7000.proeritia.common.registry.PERTags.*;
 import static net.minecraft.world.entity.EquipmentSlot.*;
 
@@ -31,23 +36,27 @@ public class PEREvents {
             flying(player, typeAsInt);
             if (typeAsInt >= 1) {
                 if (player.isAlive()) player.setHealth(player.getMaxHealth());
+                ((LivingEntityMixinMethod) player).proEritia$setImmuneHurt(true);
             } else {
+                ((LivingEntityMixinMethod) player).proEritia$setImmuneHurt(false);
             }
             if (typeAsInt >= 2) {
-                ((LivingEntityMixinMethod) player).proEritia$setImmuneDamage(true);
+                ((LivingEntityMixinMethod) player).proEritia$setImmuneSetHealth(true);
             } else {
-                ((LivingEntityMixinMethod) player).proEritia$setImmuneDamage(false);
+                ((LivingEntityMixinMethod) player).proEritia$setImmuneSetHealth(false);
             }
             if (typeAsInt >= 3) {
-                ((LivingEntityMixinMethod) player).proEritia$replaceEffectMemory(player.getActiveEffectsMap());
+                ((LivingEntityMixinMethod) player).proEritia$setImmuneDirectAccess(true);
                 ((LivingEntityMixinMethod) player).proEritia$setEffectCancel(true);
             } else {
-                ((LivingEntityMixinMethod) player).proEritia$clearEffectMemory();
+                ((LivingEntityMixinMethod) player).proEritia$setImmuneDirectAccess(false);
                 ((LivingEntityMixinMethod) player).proEritia$setEffectCancel(false);
             }
             if (typeAsInt >= 4) {
+                ((LivingEntityMixinMethod) player).proEritia$setImmuneDirectAccessAbsolutely(true);
                 //((LivingEntityMixinMethod) player).proEritia$setNotPickable(true);
             } else {
+                ((LivingEntityMixinMethod) player).proEritia$setImmuneDirectAccessAbsolutely(false);
                 //((LivingEntityMixinMethod) player).proEritia$setNotPickable(false);
             }
         }
@@ -55,6 +64,7 @@ public class PEREvents {
         private static void flying(Player entity, int typeAsInt) {
             if (!(entity instanceof ServerPlayer player)) return;
             if (player.gameMode.isCreative() || player.isSpectator()) return;
+            if (!canModify(player, typeAsInt)) return;
             if (typeAsInt >= 2) {
                 if (!player.getAbilities().mayfly) {
                     player.getAbilities().mayfly = true;
@@ -67,7 +77,18 @@ public class PEREvents {
                     player.onUpdateAbilities();
                 }
             }
+        }
 
+        private static final Map<UUID, AtomicInteger> flyingMap = new HashMap<>();
+        private static boolean canModify(Player player, int typeAsInt) {
+            if (!player.level().isClientSide) {
+                UUID uuid = player.getUUID();
+                if (!flyingMap.containsKey(uuid)) flyingMap.put(uuid, new AtomicInteger(0));
+                if (flyingMap.get(uuid).get() != typeAsInt) {
+                    flyingMap.get(uuid).set(typeAsInt);
+                    return true;
+                } else return false;
+            } else return false;
         }
 
         private static int isAllWearing(Player player) {

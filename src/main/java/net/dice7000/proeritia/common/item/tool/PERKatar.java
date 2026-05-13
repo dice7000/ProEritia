@@ -8,7 +8,9 @@ import moze_intel.projecte.utils.PlayerHelper;
 import moze_intel.projecte.utils.text.ILangEntry;
 import moze_intel.projecte.utils.text.PELang;
 import net.dice7000.proeritia.common.item.PERToolHelper;
+import net.dice7000.proeritia.common.registry.PERItems;
 import net.dice7000.proeritia.common.registry.PERMatterType;
+import net.dice7000.proeritia.compat.tic.PERTiCCompatRegistry;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,6 +20,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
+import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
+import slimeknights.tconstruct.library.tools.helper.ToolBuildHandler;
+import slimeknights.tconstruct.library.tools.item.IModifiable;
+import slimeknights.tconstruct.library.tools.item.IModifiableDisplay;
 
 public class PERKatar extends PEKatar implements PERTools {
     private final PERMatterType matterType;
@@ -30,13 +36,11 @@ public class PERKatar extends PEKatar implements PERTools {
         this.addItemCapability(ModeChangerItemCapabilityWrapper::new);
     }
 
-    @Override
-    public int getNumCharges(@NotNull ItemStack stack) {
+    @Override public int getNumCharges(@NotNull ItemStack stack) {
         return getNumChargesLimited(matterType);
     }
 
-    @Override
-    public boolean doExtraFunction(@NotNull ItemStack stack, @NotNull Player player, InteractionHand hand) {
+    @Override public boolean doExtraFunction(@NotNull ItemStack stack, @NotNull Player player, InteractionHand hand) {
         if (player.getAttackStrengthScale(0.0F) == 1.0F) {
             PERToolHelper.attackAOEonPER(stack, player, this.getMode(stack) == 1, 0L, hand);
             PlayerHelper.resetCooldown(player);
@@ -59,8 +63,7 @@ public class PERKatar extends PEKatar implements PERTools {
         return matterType;
     }
 
-    @Override
-    public float getDestroySpeed(@NotNull ItemStack stack, @NotNull BlockState state) {
+    @Override public float getDestroySpeed(@NotNull ItemStack stack, @NotNull BlockState state) {
         return PERToolHelper.getDestroySpeed(this.getShortCutDestroySpeed(stack, state), this.matterType, this.getCharge(stack));
     }
 

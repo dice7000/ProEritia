@@ -117,12 +117,12 @@ public class PERItems {
         INFINITE_STAR                   = PROERITIA_ITEMS.register("infinite_star"                     ,          InfiniteStarItem::new);
         //tool
         KSE_PICKAXE                     = PROERITIA_ITEMS.register("kse_pickaxe"                       , () -> new PERPickaxe      (KSE));
-        KSE_AXE                         = PROERITIA_ITEMS.register("kse_axe"                           , () -> new PERAxe(KSE));
-        KSE_SHOVEL                      = PROERITIA_ITEMS.register("kse_shovel"                        , () -> new PERShovel(KSE));
+        KSE_AXE                         = PROERITIA_ITEMS.register("kse_axe"                           , () -> new PERAxe          (KSE));
+        KSE_SHOVEL                      = PROERITIA_ITEMS.register("kse_shovel"                        , () -> new PERShovel       (KSE));
         KSE_HOE                         = PROERITIA_ITEMS.register("kse_hoe"                           , () -> new PERHoe          (KSE));
-        KSE_SHEARS                      = PROERITIA_ITEMS.register("kse_shears"                        , () -> new PERShears(KSE));
-        KSE_HAMMER                      = PROERITIA_ITEMS.register("kse_hammer"                        , () -> new PERHammer(KSE));
-        KSE_SWORD                       = PROERITIA_ITEMS.register("kse_sword"                         , () -> new PERSword(KSE));
+        KSE_SHEARS                      = PROERITIA_ITEMS.register("kse_shears"                        , () -> new PERShears       (KSE));
+        KSE_HAMMER                      = PROERITIA_ITEMS.register("kse_hammer"                        , () -> new PERHammer       (KSE));
+        KSE_SWORD                       = PROERITIA_ITEMS.register("kse_sword"                         , () -> new PERSword        (KSE));
         KSE_MORNINGSTAR                 = PROERITIA_ITEMS.register("kse_morning_star"                  , () -> new PERMorningStar  (KSE));
         KSE_KATAR                       = PROERITIA_ITEMS.register("kse_katar"                         , () -> new PERKatar        (KSE));
         IFP_PICKAXE                     = PROERITIA_ITEMS.register("ifp_pickaxe"                       , () -> new PERPickaxe      (IFP));
@@ -153,10 +153,10 @@ public class PERItems {
         INF_MORNINGSTAR                 = PROERITIA_ITEMS.register("inf_morning_star"                  , () -> new PERMorningStar  (INF));
         INF_KATAR                       = PROERITIA_ITEMS.register("inf_katar"                         , () -> new PERKatar        (INF));
         //armor
-        KSE_HELMET                      = PROERITIA_ITEMS.register("kse_helmet"                        , () -> new PERHelmet(KSE));
-        KSE_CHEST                       = PROERITIA_ITEMS.register("kse_chest"                         , () -> new PERChestplate(KSE));
-        KSE_LEGGINGS                    = PROERITIA_ITEMS.register("kse_leggings"                      , () -> new PERLeggings(KSE));
-        KSE_BOOTS                       = PROERITIA_ITEMS.register("kse_boots"                         , () -> new PERBoots(KSE));
+        KSE_HELMET                      = PROERITIA_ITEMS.register("kse_helmet"                        , () -> new PERHelmet       (KSE));
+        KSE_CHEST                       = PROERITIA_ITEMS.register("kse_chest"                         , () -> new PERChestplate   (KSE));
+        KSE_LEGGINGS                    = PROERITIA_ITEMS.register("kse_leggings"                      , () -> new PERLeggings     (KSE));
+        KSE_BOOTS                       = PROERITIA_ITEMS.register("kse_boots"                         , () -> new PERBoots        (KSE));
         IFP_HELMET                      = PROERITIA_ITEMS.register("ifp_helmet"                        , () -> new PERHelmet       (IFP));
         IFP_CHEST                       = PROERITIA_ITEMS.register("ifp_chest"                         , () -> new PERChestplate   (IFP));
         IFP_LEGGINGS                    = PROERITIA_ITEMS.register("ifp_leggings"                      , () -> new PERLeggings     (IFP));

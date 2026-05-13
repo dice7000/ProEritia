@@ -15,7 +15,7 @@ public class PERSword extends PESword implements PERTools {
     private final PERMatterType matterType;
 
     public PERSword(PERMatterType matterType) {
-        super(EnumMatterType.RED_MATTER, 1, matterType.getDamageOnregistry(), new Item.Properties());
+        super(EnumMatterType.RED_MATTER, 1, matterType.getDamageOnRegistry(), new Item.Properties());
         this.matterType = matterType;
     }
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "proeritia:item/kse_tier/13leggings"
+  }
+}

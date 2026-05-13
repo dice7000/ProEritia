@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:part_builder",
+  "cost": 4,
+  "pattern": "proeritia:katar_blade",
+  "pattern_item": [
+    {
+      "tag": "tconstruct:patterns/default"
+    },
+    {
+      "item": "proeritia:katar_blade_cast"
+    }
+  ],
+  "result": {
+    "item": "proeritia:katar_blade"
+  }
+}
