@@ -44,7 +44,7 @@ public abstract class SEDMixin implements SEDMixinMethod {
                 pKey.equals(((LivingEntityAccessor) livingEntity).getHealthID()) &&
                 ((LivingEntityMixinMethod) livingEntity).proEritia$getImmuneDirectAccess()) {
             try {
-                cir.setReturnValue((T) Float.valueOf(livingEntity.getMaxHealth()));
+                cir.setReturnValue((T) Float.valueOf(((LivingEntityMixinMethod) livingEntity).proEritia$anotherGetMaxHealth()));
             } catch (ClassCastException e) {
                 LogUtils.getLogger().error("Failed to cast health value to the expected type. Returning default value instead.");
             }
@@ -64,15 +64,14 @@ public abstract class SEDMixin implements SEDMixinMethod {
         public void setValueInject(Object pValue, CallbackInfo ci) {
             if (value instanceof Float && proEritia$entity != null &&
                     accessor.equals(((LivingEntityAccessor) proEritia$entity).getHealthID()) &&
-                    ((LivingEntityMixinMethod) proEritia$entity).proEritia$getImmuneDirectAccessAbsolutely()) {
-                ci.cancel();
-            }
+                    ((LivingEntityMixinMethod) proEritia$entity).proEritia$getImmuneDirectAccessAbsolutely()) ci.cancel();
         }
         @Inject(method = "getValue", at = @At("HEAD"), cancellable = true)
         public void getValueInject(CallbackInfoReturnable<Object> cir) {
             if (value instanceof Float &&  proEritia$entity != null && accessor.equals(((LivingEntityAccessor) proEritia$entity).getHealthID())) {
-                if (((LivingEntityMixinMethod) proEritia$entity).proEritia$getImmuneDirectAccessAbsolutely()) cir.setReturnValue(proEritia$entity.getMaxHealth());
-                else if (((LivingEntityMixinMethod) proEritia$entity).proEritia$getForceDeath()) cir.setReturnValue(Float.MIN_VALUE);
+                if (((LivingEntityMixinMethod) proEritia$entity).proEritia$getImmuneDirectAccessAbsolutely())
+                    cir.setReturnValue(((LivingEntityMixinMethod) proEritia$entity).proEritia$anotherGetMaxHealth());
+                else if (((LivingEntityMixinMethod) proEritia$entity).proEritia$getForceDeath()) cir.setReturnValue(0.0F);
             }
         }
     }

@@ -1,10 +1,5 @@
 package net.dice7000.proeritia.mixin.method;
 
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
-
-import java.util.Map;
-
 public interface LivingEntityMixinMethod {
     void proEritia$anotherSetHealth(float value);
 
@@ -12,6 +7,8 @@ public interface LivingEntityMixinMethod {
 
     boolean proEritia$shouldRunDieMethod();
     void proEritia$setForceDeath(boolean forceDeath);
+
+    float proEritia$anotherGetMaxHealth();
 
     void proEritia$setImmuneHurt(boolean value);
 

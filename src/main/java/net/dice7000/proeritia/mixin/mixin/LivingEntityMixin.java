@@ -25,8 +25,7 @@ public abstract class LivingEntityMixin implements LivingEntityMixinMethod {
     @Shadow public abstract boolean removeAllEffects();
     @Shadow public abstract void remove(Entity.RemovalReason pReason);
 
-    @Override public void proEritia$anotherSetHealth(float value) {
-        proEritia$this.getEntityData().set(DATA_HEALTH_ID, value);}
+    @Override public void proEritia$anotherSetHealth(float value) {proEritia$this.getEntityData().set(DATA_HEALTH_ID, value);}
     @Unique private boolean proEritia$forceDeath = false;
     @Override public void proEritia$setForceDeath(boolean forceDeath) {
         proEritia$forceDeath = forceDeath;
@@ -41,9 +40,7 @@ public abstract class LivingEntityMixin implements LivingEntityMixinMethod {
         if (proEritia$forceDeath) proEritia$anotherTickDeath();
     }
 
-    @Override public boolean proEritia$shouldRunDieMethod() {
-        return !proEritia$this.isRemoved() || proEritia$anotherGetHealth() <= 0.0F || proEritia$forceDeath;
-    }
+    @Override public boolean proEritia$shouldRunDieMethod() {return !proEritia$this.isRemoved() || proEritia$anotherGetHealth() <= 0.0F || proEritia$forceDeath;}
     @Unique int proEritia$anotherDeathTime = 0;
     @Unique protected void proEritia$anotherTickDeath() {
         ++proEritia$anotherDeathTime;
@@ -59,9 +56,7 @@ public abstract class LivingEntityMixin implements LivingEntityMixinMethod {
     @Unique private float proEritia$anotherGetHealth() {
         return proEritia$this.getEntityData().get(DATA_HEALTH_ID);
     }
-    @Unique private float proEritia$anotherGetMaxHealth() {
-        return ((float) proEritia$this.getAttributeValue(Attributes.MAX_HEALTH));
-    }
+    @Override public float proEritia$anotherGetMaxHealth() {return ((float) proEritia$this.getAttributeValue(Attributes.MAX_HEALTH));}
 
     @Unique private boolean proEritia$isImmuneHurt = false;
     @Unique private boolean proEritia$isImmuneSetHealth = false;
@@ -87,7 +82,6 @@ public abstract class LivingEntityMixin implements LivingEntityMixinMethod {
     @Override public void proEritia$setImmuneDirectAccessAbsolutely(boolean value) {
         proEritia$isImmuneDirectAccessAbsolutely = value;
     }
-
     @Override public boolean proEritia$getImmuneDirectAccess() {
         return proEritia$isImmuneDirectAccess;
     }
@@ -103,7 +97,6 @@ public abstract class LivingEntityMixin implements LivingEntityMixinMethod {
     public void setHealthInject(float pHealth, CallbackInfo ci) {
         if (proEritia$isImmuneSetHealth) proEritia$this.getEntityData().set(DATA_HEALTH_ID, Mth.clamp(proEritia$anotherGetMaxHealth(), 1.0F, Float.MAX_VALUE));
     }
-
     @Inject(method = "addEffect(Lnet/minecraft/world/effect/MobEffectInstance;Lnet/minecraft/world/entity/Entity;)Z", at = @At("HEAD"), cancellable = true)
     public void addEffectInject(MobEffectInstance pEffectInstance, Entity pEntity, CallbackInfoReturnable<Boolean> cir) {
         if (proEritia$isEffectCancel) cir.setReturnValue(false);
@@ -112,14 +105,18 @@ public abstract class LivingEntityMixin implements LivingEntityMixinMethod {
     public void forceAddEffectInject(MobEffectInstance pInstance, Entity pEntity, CallbackInfo ci) {
         if (proEritia$isEffectCancel) ci.cancel();
     }
-
     @Inject(method = "isPickable", at = @At("HEAD"), cancellable = true)
     public void isPickableInject(CallbackInfoReturnable<Boolean> cir) {
         if (proEritia$isNotPickable) cir.setReturnValue(false);
     }
-
     @Inject(method = "getHealth", at = @At("HEAD"), cancellable = true)
     public void getHealthInject(CallbackInfoReturnable<Float> cir) {
-        if (proEritia$forceDeath) cir.setReturnValue(0.0F);
+        if (proEritia$isImmuneDirectAccessAbsolutely) cir.setReturnValue(proEritia$anotherGetMaxHealth());
+        else if (proEritia$forceDeath) cir.setReturnValue(0.0F);
+    }
+    @Inject(method = "isDeadOrDying", at = @At("HEAD"), cancellable = true)
+    public void isDeadOrDyingInject(CallbackInfoReturnable<Boolean> cir) {
+        if (proEritia$isImmuneDirectAccessAbsolutely) cir.setReturnValue(false);
+        else if (proEritia$forceDeath) cir.setReturnValue(true);
     }
 }
